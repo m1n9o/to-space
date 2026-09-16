@@ -9,6 +9,7 @@ const fixture: SpaceOption = {
   id: 'fixture-provider',
   provider: 'Fixture Provider',
   vehicle: 'Fixture Vehicle',
+  country: 'Fixture Country',
   experienceType: 'suborbital',
   altitudeKm: '100+ km',
   crossesKarmanLine: true,
@@ -36,6 +37,7 @@ describe('OptionCard', () => {
     render(<OptionCard option={fixture} />)
 
     expect(screen.getByText('Fixture Provider')).toBeInTheDocument()
+    expect(screen.getByText('Fixture Country')).toBeInTheDocument()
     expect(
       screen.getByRole('heading', { name: 'Fixture Vehicle' }),
     ).toBeInTheDocument()

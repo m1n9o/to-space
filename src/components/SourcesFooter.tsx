@@ -217,8 +217,7 @@ export function SourcesFooter() {
         ))}
       </div>
       <p className="footer-meta">
-        数据整理自 ordinary-person-spaceflight-options-2026.md · 页面内容截至
-        2026-09-16，请以各官方渠道最新信息为准。
+        页面内容截至 2026-09-16，请以各官方渠道最新信息为准。
       </p>
     </footer>
   )

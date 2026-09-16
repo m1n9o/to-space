@@ -542,6 +542,29 @@ details .details-body ul {
   padding-left: 20px;
 }
 
+.glossary-section {
+  padding-bottom: 0;
+}
+
+.glossary-list {
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.glossary-item dt {
+  color: var(--accent-cyan);
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  margin: 0 0 2px;
+}
+
+.glossary-item dd {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
 /* ---------- Checklist ---------- */
 
 .checklist {
@@ -600,20 +623,48 @@ details .details-body ul {
 
 footer.sources-index {
   border-top: 1px solid var(--border-subtle);
-  padding: 48px 24px 64px;
+  padding: 56px 24px 64px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer.sources-index > h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  margin: 0 0 28px;
 }
 
 .sources-index__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 16px;
   font-size: 0.85rem;
+}
+
+.sources-index__group {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 16px 18px;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sources-index__group:hover {
+  border-color: rgba(148, 163, 255, 0.32);
+  transform: translateY(-2px);
 }
 
 .sources-index__group h4 {
   color: var(--accent-violet);
-  font-size: 0.85rem;
-  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .sources-index__group ul {
@@ -623,7 +674,21 @@ footer.sources-index {
 }
 
 .sources-index__group li {
-  margin-bottom: 6px;
+  position: relative;
+  padding-left: 14px;
+  margin-bottom: 8px;
+}
+
+.sources-index__group li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  opacity: 0.7;
 }
 
 .sources-index__group a {

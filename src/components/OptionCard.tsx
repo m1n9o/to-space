@@ -29,6 +29,10 @@ export function OptionCard({ option }: OptionCardProps) {
 
         <dl className="card__facts">
           <div className="fact">
+            <dt>国家/地区</dt>
+            <dd>{option.country}</dd>
+          </div>
+          <div className="fact">
             <dt>体验类型</dt>
             <dd>{EXPERIENCE_LABELS[option.experienceType]}</dd>
           </div>

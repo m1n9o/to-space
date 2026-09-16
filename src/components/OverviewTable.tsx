@@ -1,5 +1,6 @@
 interface OverviewRow {
   option: string
+  country: string
   type: string
   crossesKarman: string
   price: string
@@ -10,6 +11,7 @@ interface OverviewRow {
 const OVERVIEW_ROWS: OverviewRow[] = [
   {
     option: 'Blue Origin New Shepard',
+    country: '美国',
     type: '亚轨道',
     crossesKarman: '✅',
     price: '正式票价未公开；进入订购流程需 $150,000 可退押金',
@@ -18,6 +20,7 @@ const OVERVIEW_ROWS: OverviewRow[] = [
   },
   {
     option: 'Virgin Galactic Delta',
+    country: '美国',
     type: '亚轨道',
     crossesKarman: '❌，约 91 km',
     price: '最近一批 $750,000，已售罄；下一批计划更贵',
@@ -26,6 +29,7 @@ const OVERVIEW_ROWS: OverviewRow[] = [
   },
   {
     option: '深蓝航天',
+    country: '中国',
     type: '亚轨道',
     crossesKarman: '🎯 目标 >100 km',
     price: '标价 ¥1.5M；首批直播价 ¥1M',
@@ -34,6 +38,7 @@ const OVERVIEW_ROWS: OverviewRow[] = [
   },
   {
     option: '中科宇航 CAS Space',
+    country: '中国',
     type: '亚轨道',
     crossesKarman: '🎯 目标 ≥100 km',
     price: '公司最新目标：初期 ≤¥2M',
@@ -42,6 +47,7 @@ const OVERVIEW_ROWS: OverviewRow[] = [
   },
   {
     option: '穿越者 CYZ1',
+    country: '中国',
     type: '亚轨道',
     crossesKarman: '🎯 目标 100 km',
     price: '¥3M；预订费 10%',
@@ -50,6 +56,7 @@ const OVERVIEW_ROWS: OverviewRow[] = [
   },
   {
     option: 'Axiom Space + SpaceX',
+    country: '美国',
     type: 'ISS / 轨道',
     crossesKarman: '✅',
     price: '当前不公开；Ax-1 历史报道约 $55M/人',
@@ -58,6 +65,7 @@ const OVERVIEW_ROWS: OverviewRow[] = [
   },
   {
     option: 'SpaceX Dragon 定制任务',
+    country: '美国',
     type: '轨道',
     crossesKarman: '✅',
     price: '报价制，未公开标准票价',
@@ -66,6 +74,7 @@ const OVERVIEW_ROWS: OverviewRow[] = [
   },
   {
     option: 'Vast + SpaceX',
+    country: '美国',
     type: 'ISS / Haven-1',
     crossesKarman: '✅',
     price: '未公开，询价制',
@@ -74,6 +83,7 @@ const OVERVIEW_ROWS: OverviewRow[] = [
   },
   {
     option: 'Voyager Technologies',
+    country: '美国',
     type: 'ISS',
     crossesKarman: '✅',
     price: '未公开',
@@ -82,6 +92,7 @@ const OVERVIEW_ROWS: OverviewRow[] = [
   },
   {
     option: 'SERA',
+    country: '美国',
     type: 'Blue Origin 亚轨道选拔',
     crossesKarman: '✅',
     price: '不是传统买票',
@@ -90,6 +101,7 @@ const OVERVIEW_ROWS: OverviewRow[] = [
   },
   {
     option: 'Space for Humanity',
+    country: '美国',
     type: '赞助航天员',
     crossesKarman: '取决于承运商',
     price: '获选者由项目赞助',
@@ -98,6 +110,7 @@ const OVERVIEW_ROWS: OverviewRow[] = [
   },
   {
     option: 'Space Adventures',
+    country: '美国',
     type: 'ISS / 私人航天中介',
     crossesKarman: '✅',
     price: '当前无清晰公开标准价',
@@ -118,6 +131,7 @@ export function OverviewTable() {
         <thead>
           <tr>
             <th>Option</th>
+            <th>国家/地区</th>
             <th>类型</th>
             <th>跨 100km？</th>
             <th>当前/公开价格</th>
@@ -129,6 +143,7 @@ export function OverviewTable() {
           {OVERVIEW_ROWS.map((row) => (
             <tr key={row.option}>
               <td>{row.option}</td>
+              <td>{row.country}</td>
               <td>{row.type}</td>
               <td>{row.crossesKarman}</td>
               <td>{row.price}</td>

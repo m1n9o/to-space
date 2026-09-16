@@ -9,6 +9,7 @@ const option = (id: string, provider: string): SpaceOption => ({
   id,
   provider,
   vehicle: `${provider} vehicle`,
+  country: 'Fixture Country',
   experienceType: 'suborbital',
   altitudeKm: '100 km',
   crossesKarmanLine: true,

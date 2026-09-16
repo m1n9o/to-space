@@ -13,6 +13,7 @@ const option = (overrides: Partial<SpaceOption>): SpaceOption => ({
   id: 'fixture',
   provider: 'Fixture Provider',
   vehicle: 'Fixture Vehicle',
+  country: 'Fixture Country',
   experienceType: 'suborbital',
   altitudeKm: '100 km',
   crossesKarmanLine: true,

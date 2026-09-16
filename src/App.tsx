@@ -6,6 +6,7 @@ import { Checklist } from './components/Checklist'
 import { Conclusion } from './components/Conclusion'
 import { Disclaimer } from './components/Disclaimer'
 import { FilterBar } from './components/FilterBar'
+import { Glossary } from './components/Glossary'
 import { GoalRoutes } from './components/GoalRoutes'
 import { Hero } from './components/Hero'
 import { OverviewTable } from './components/OverviewTable'
@@ -41,6 +42,7 @@ function App() {
       <Hero />
       <main>
         <Disclaimer />
+        <Glossary />
         <OverviewTable />
         <FilterBar
           activeFilters={activeFilters}

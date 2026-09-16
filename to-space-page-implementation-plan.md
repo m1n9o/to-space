@@ -1,6 +1,178 @@
-// 数据来源：ordinary-person-spaceflight-options-2026.md
-// 更新数据时只需要修改本文件（字段值 + lastChecked），不涉及页面结构改动。
+---
+title: "『普通人如何上太空』页面 — 实现文档"
+purpose: "供新建独立仓库时直接实现使用，内容基于 ordinary-person-spaceflight-options-2026.md"
+last_updated: "2026-09-16"
+---
 
+# 实现文档：How Can an Ordinary Person Go to Space (2026)
+
+> 本文档是给新仓库的实现规格，不依赖 quad-daily 仓库的任何代码。数据来源为同目录下的
+> `ordinary-person-spaceflight-options-2026.md`，若该文档更新，本文档中的数据结构也需要同步更新。
+
+---
+
+## 1. 目标与约束
+
+- 做一个**独立站点**，与 quad-daily（看板 App）没有任何代码/路由/状态关联。
+- 主题：太空风格（深色背景 + 星空/星云 + 发光强调色），信息密度高但可通过筛选器快速定位。
+- 严格区分事实类型：**已发生的事实** vs **公司目标/预售价格/历史成交价**。页面上必须用 Badge 明确标注，不能把"公司目标"渲染成"确定可用"。
+- 内容语言：中文（与源文档一致）。
+
+## 2. 推荐技术栈
+
+内容本质是"一份可筛选的静态数据 + 卡片 UI"，不需要复杂框架。推荐两种方案，任选其一：
+
+**方案 A（推荐，最省事）**：纯静态 HTML + CSS + vanilla JS，无构建步骤。
+- `index.html` + `style.css` + `data.js`（数据）+ `app.js`（筛选/渲染逻辑）
+- 直接扔进新仓库根目录，GitHub Pages 用 `main` 分支 / `docs` 目录直接托管，零构建配置。
+
+**方案 B**：Vite + 原生 TS（不用 React，页面本身没有复杂交互状态）。
+- 更好的开发体验（热更新、类型检查数据结构），构建后仍是静态产物。
+- 如果之后想加更多页面/路由，这个方案更方便扩展。
+
+两种方案的数据结构、设计系统、页面结构完全一致，见下文。
+
+## 3. 站点结构
+
+```
+/
+├── index.html          # Hero + Filter + Card Grid + Footer
+├── style.css
+├── data.js / data.ts    # 见第 5 节，所有 Option 的结构化数据
+└── app.js / main.ts     # 渲染卡片、筛选逻辑
+```
+
+单页应用，无需路由。
+
+## 4. 设计系统（太空主题）
+
+### 4.1 配色
+
+深色背景为主，避免纯黑（用深蓝/深紫），强调色做发光效果。
+
+```css
+:root {
+  --bg-void: #05070f;
+  --bg-panel: #0c1024;
+  --bg-panel-hover: #12173a;
+  --border-subtle: rgba(148, 163, 255, 0.16);
+
+  --text-primary: #eef1ff;
+  --text-secondary: #9aa3c7;
+  --text-muted: #5c6390;
+
+  --accent-cyan: #5ee7ff;
+  --accent-violet: #a78bfa;
+  --accent-magenta: #ff7ad9;
+  --accent-amber: #ffb454;   /* 用于警示/不确定性 badge */
+  --accent-green: #4ade80;   /* 用于 FLIGHT PROVEN 等已验证事实 */
+  --accent-red: #fb7185;     /* 用于 PAUSED / SOLD OUT / CLOSED */
+
+  --gradient-nebula: radial-gradient(
+      60% 60% at 20% 10%,
+      rgba(167, 139, 250, 0.25),
+      transparent 60%
+    ),
+    radial-gradient(50% 50% at 85% 20%, rgba(94, 231, 255, 0.18), transparent 60%),
+    radial-gradient(70% 70% at 50% 100%, rgba(255, 122, 217, 0.12), transparent 60%);
+}
+```
+
+### 4.2 星空背景
+
+用 CSS 生成多层小圆点（box-shadow 打点法），无需图片资源，性能好：
+
+```css
+body {
+  background-color: var(--bg-void);
+  background-image: var(--gradient-nebula);
+}
+
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.8;
+}
+/* 用 JS 生成 2~3 层不同大小/透明度/动画速度的星点 div，
+   或用一个 <canvas> 绘制随机点 + 极慢的 twinkle opacity 动画。
+   建议：canvas 方案，200~300 个点，随机 radius 0.5~1.5px，
+   随机 twinkle 周期 3~6s，避免 GPU 负担。 */
+```
+
+### 4.3 字体
+
+- 标题：等宽感/科技感字体，如 `"Space Grotesk", "IBM Plex Sans", system-ui`
+- 正文：`"Inter", "PingFang SC", "Noto Sans SC", system-ui`（中文优先保证可读性，不必强求科技感字体覆盖中文）
+- 数字/坐标类信息（高度、价格）可用等宽字体 `"JetBrains Mono", monospace` 增强"仪表盘"感
+
+### 4.4 卡片样式
+
+- 半透明面板 `background: var(--bg-panel)`，`border: 1px solid var(--border-subtle)`，`border-radius: 16px`
+- hover 时轻微上浮 + 边框发光（`box-shadow: 0 0 24px rgba(94,231,255,0.15)`）
+- 卡片顶部一条按 Experience Type 着色的细条（近太空=灰紫，亚轨道=青色，轨道=品红，空间站=金色），帮助用户扫视分类
+
+### 4.5 响应式
+
+- Desktop: 3 列卡片网格
+- Tablet: 2 列
+- Mobile: 1 列，筛选器折叠为下拉/抽屉
+
+## 5. 数据结构
+
+### 5.1 Option 字段（对应源文档第 28 节的建议字段）
+
+```ts
+type ExperienceType = 'near-space' | 'suborbital' | 'orbital' | 'station'
+
+type StatusBadge =
+  | 'FLIGHT_PROVEN'
+  | 'CURRENTLY_PAUSED'
+  | 'BOOKING_OPEN'
+  | 'WAITLIST'
+  | 'SOLD_OUT'
+  | 'COMPANY_TARGET'
+  | 'PRICE_UNDISCLOSED'
+  | 'HISTORICAL_PRICE'
+  | 'PRE_SALE'
+  | 'UNDER_DEVELOPMENT'
+  | 'SPONSORED'
+  | 'APPLICATIONS_CLOSED'
+  | 'NOT_ACTUAL_SPACE'
+
+interface SpaceOption {
+  id: string
+  provider: string          // 运营方，如 "Blue Origin"
+  vehicle: string           // 飞行器/项目名，如 "New Shepard"
+  experienceType: ExperienceType
+  altitudeKm: string        // 展示用字符串，如 "100+ km" / "25 km"
+  crossesKarmanLine: boolean | 'target' // true=已验证跨越, 'target'=目标但未验证, false=不跨越
+  flightDuration: string    // 如 "约 11 分钟"
+  weightlessness: string    // 如 "数分钟" / "不适用"
+  price: string             // 展示字符串，如 "$150,000（可退押金，非最终票价）"
+  priceStatus: StatusBadge[] // 可多个，如 ['PRICE_UNDISCLOSED']
+  deposit: string | null
+  bookingStatus: StatusBadge[]
+  targetDate: string        // 如 "公司目标 2027-02" 或 "已完成"
+  dateConfidence: 'confirmed' | 'company-target' | 'unclear'
+  training: string
+  medicalRequirements: string
+  technicalMaturity: string
+  crewedFlightHistory: string
+  mainRisks: string[]
+  badges: StatusBadge[]      // 顶部展示的核心 badge（去重后的关键几个）
+  budgetTier: 'sponsored' | 'lt-3m-cny' | '500k-1m-usd' | '1m-10m-usd' | '10m-usd-plus'
+  sources: { label: string; url: string }[]
+  lastChecked: string        // "2026-09-16"
+}
+```
+
+### 5.2 全部 Option 数据（可直接改写为 JSON/TS 数组）
+
+> 以下内容全部整理自源文档，字段值已经过事实/目标区分处理。实现时建议先做成 `data.js` 常量导出。
+
+```js
 export const SPACE_OPTIONS = [
   {
     id: "blue-origin-new-shepard",
@@ -419,7 +591,11 @@ export const SPACE_OPTIONS = [
     lastChecked: "2026-09-16"
   }
 ]
+```
 
+### 5.3 Badge 展示文案（中英对照，供 UI 使用）
+
+```js
 export const BADGE_LABELS = {
   FLIGHT_PROVEN: { text: "已验证载人飞行", color: "green" },
   CURRENTLY_PAUSED: { text: "当前暂停", color: "red" },
@@ -435,24 +611,91 @@ export const BADGE_LABELS = {
   APPLICATIONS_CLOSED: { text: "申请已关闭", color: "red" },
   NOT_ACTUAL_SPACE: { text: "非真正太空", color: "muted" }
 }
+```
 
-export const EXPERIENCE_LABELS = {
-  "near-space": "近太空",
-  suborbital: "亚轨道",
-  orbital: "轨道",
-  station: "空间站"
+## 6. 筛选器逻辑
+
+```js
+const FILTERS = {
+  experience: ['near-space', 'suborbital', 'orbital', 'station'],
+  budget: ['sponsored', 'lt-3m-cny', '500k-1m-usd', '1m-10m-usd', '10m-usd-plus'],
+  status: Object.keys(BADGE_LABELS), // 用户可多选任意 badge 进行筛选
+  boundary: ['crosses', 'not-crosses', 'target'] // 对应 crossesKarmanLine 的 true/false/'target'
 }
 
-export const BUDGET_LABELS = {
-  sponsored: "赞助 / 选拔制",
-  "lt-3m-cny": "< ¥3M",
-  "500k-1m-usd": "$500k–$1M",
-  "1m-10m-usd": "$1M–$10M",
-  "10m-usd-plus": "$10M+"
+// 渲染逻辑：多个筛选维度之间是 AND，同一维度内多选是 OR
+function filterOptions(options, activeFilters) {
+  return options.filter(opt => {
+    if (activeFilters.experience.length && !activeFilters.experience.includes(opt.experienceType)) return false
+    if (activeFilters.budget.length && !activeFilters.budget.includes(opt.budgetTier)) return false
+    if (activeFilters.status.length && !opt.badges.some(b => activeFilters.status.includes(b))) return false
+    if (activeFilters.boundary.length) {
+      const boundaryKey = opt.crossesKarmanLine === true ? 'crosses'
+        : opt.crossesKarmanLine === false ? 'not-crosses' : 'target'
+      if (!activeFilters.boundary.includes(boundaryKey)) return false
+    }
+    return true
+  })
 }
+```
 
-export const BOUNDARY_LABELS = {
-  crosses: "跨越 100km 卡门线",
-  "not-crosses": "不跨越 100km",
-  target: "目标跨越（未验证）"
-}
+## 7. 页面结构（HTML 骨架示意）
+
+```html
+<body>
+  <canvas class="starfield"></canvas>
+
+  <header class="hero">
+    <p class="hero-eyebrow">Last updated: 16 Sep 2026</p>
+    <h1>普通人如何上太空？</h1>
+    <p class="hero-subtitle">
+      从 ¥1.5M 的未来亚轨道船票，到 $50M+ 的轨道任务——
+      2026 年所有可信、正在销售或正在开发中的真实路径。
+    </p>
+  </header>
+
+  <section class="overview-table"><!-- 对应源文档第4节总览表 --></section>
+
+  <section class="filters"><!-- Experience / Budget / Status / Boundary --></section>
+
+  <section class="card-grid"><!-- SPACE_OPTIONS.map(renderCard) --></section>
+
+  <section class="budget-routes"><!-- 源文档第22节：路线 A~E --></section>
+
+  <section class="goal-routes"><!-- 源文档第26节：Goal A~E --></section>
+
+  <section class="conclusion"><!-- 源文档第29节结论 --></section>
+
+  <footer class="sources-index"><!-- 源文档第30节核心来源索引 --></footer>
+</body>
+```
+
+## 8. 内容补充（非卡片数据，静态文本区块）
+
+以下内容直接照抄源文档对应章节即可，不需要结构化：
+
+- **总览表**（第4节）：可直接渲染为一个可横向滚动的 `<table>`，作为卡片网格上方的"速览"。
+- **按预算分类**（第22节）：路线 A（不靠财富）/ B（¥1M–3M）/ C（$750k+）/ D（Blue Origin）/ E（数千万美元级）。
+- **按目标分类**（第26节）：Goal A~E，帮助用户按"我想要什么"而不是"哪家最好"做选择。
+- **训练与健康要求**（第23节）、**商业航天 ≠ 民航安全认证**（第24节）：建议做成两个可展开的 `<details>` 区块，不占首屏空间但保留重要免责信息。
+- **购买前必须调查的18个问题**（第25节）：建议做成一个可下载/复制的 checklist 区块。
+- **最终结论**（第29节）+ **核心来源索引**（第30节）：放在页面底部。
+
+## 9. 免责声明（必须保留）
+
+页面底部必须保留源文档开头的重要说明，明确区分：
+
+> 已实际载人飞行 / 正在销售但未来才能飞 / 公司公布的目标日期 / 历史成交价格 / 当前官方价格 / 近太空但未真正进入太空
+
+不能把公司目标渲染成确定事实。
+
+## 10. 部署（新仓库）
+
+1. 新建仓库（建议命名如 `to-space` 或类似语义化名称）。
+2. 若选方案 A（纯静态）：仓库根目录直接放 `index.html/style.css/data.js/app.js`，GitHub 仓库 Settings → Pages → Source 选 `main` 分支 `/`（root），即可获得 `https://<用户名>.github.io/<仓库名>/`。由于是独立仓库，天然获得独立的顶层路径。
+3. 若选方案 B（Vite）：`vite.config.ts` 设置 `base: '/<仓库名>/'`（同 quad-daily 的写法），走 GitHub Actions 构建部署，可直接参考 quad-daily 现有的 `.github/workflows/deploy.yml` 复制过去改 repo 名。
+4. 数据更新时，只需要更新 `data.js` 里的字段和 `lastChecked`，不涉及页面结构改动。
+
+---
+
+（本文档由 Claude Code 根据 `ordinary-person-spaceflight-options-2026.md` 整理生成，供新仓库实现参考。）

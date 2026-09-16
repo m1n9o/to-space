@@ -32,6 +32,9 @@ describe('App', () => {
     const filterBar = screen
       .getByRole('heading', { name: '筛选方案' })
       .closest('section')!
+    fireEvent.click(
+      within(filterBar).getByRole('button', { name: '按体验类型' }),
+    )
     fireEvent.click(within(filterBar).getByRole('button', { name: '亚轨道' }))
 
     const suborbitalCount = SPACE_OPTIONS.filter(

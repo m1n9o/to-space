@@ -9,7 +9,35 @@ import { FilterBar } from './FilterBar'
 afterEach(cleanup)
 
 describe('FilterBar', () => {
-  it('calls onToggle with the dimension and value when a chip is clicked', () => {
+  it('keeps every dropdown panel closed by default', () => {
+    render(
+      <FilterBar
+        activeFilters={EMPTY_FILTERS}
+        onToggle={vi.fn()}
+        onClear={vi.fn()}
+      />,
+    )
+
+    expect(
+      screen.queryByRole('button', { name: '亚轨道' }),
+    ).not.toBeInTheDocument()
+  })
+
+  it('opens a dropdown panel when its trigger is clicked', () => {
+    render(
+      <FilterBar
+        activeFilters={EMPTY_FILTERS}
+        onToggle={vi.fn()}
+        onClear={vi.fn()}
+      />,
+    )
+
+    fireEvent.click(screen.getByRole('button', { name: '按体验类型' }))
+
+    expect(screen.getByRole('button', { name: '亚轨道' })).toBeInTheDocument()
+  })
+
+  it('calls onToggle with the dimension and value when a chip inside the panel is clicked', () => {
     const onToggle = vi.fn()
     render(
       <FilterBar
@@ -19,12 +47,13 @@ describe('FilterBar', () => {
       />,
     )
 
+    fireEvent.click(screen.getByRole('button', { name: '按体验类型' }))
     fireEvent.click(screen.getByRole('button', { name: '亚轨道' }))
 
     expect(onToggle).toHaveBeenCalledWith('experience', 'suborbital')
   })
 
-  it('marks an active chip with the active class', () => {
+  it('marks an active chip and shows a count badge on the trigger', () => {
     const active: ActiveFilters = {
       ...EMPTY_FILTERS,
       experience: ['suborbital'],
@@ -33,12 +62,66 @@ describe('FilterBar', () => {
       <FilterBar activeFilters={active} onToggle={vi.fn()} onClear={vi.fn()} />,
     )
 
+    const trigger = screen.getByRole('button', { name: '按体验类型' })
+    expect(trigger).toHaveClass('filter-dropdown__trigger--active')
+    expect(trigger).toHaveTextContent('1')
+
+    fireEvent.click(trigger)
     expect(screen.getByRole('button', { name: '亚轨道' })).toHaveClass(
       'chip--active',
     )
-    expect(screen.getByRole('button', { name: '轨道' })).not.toHaveClass(
-      'chip--active',
+  })
+
+  it('closes the open panel when another trigger is clicked', () => {
+    render(
+      <FilterBar
+        activeFilters={EMPTY_FILTERS}
+        onToggle={vi.fn()}
+        onClear={vi.fn()}
+      />,
     )
+
+    fireEvent.click(screen.getByRole('button', { name: '按体验类型' }))
+    expect(screen.getByRole('button', { name: '亚轨道' })).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: '按预算' }))
+    expect(
+      screen.queryByRole('button', { name: '亚轨道' }),
+    ).not.toBeInTheDocument()
+  })
+
+  it('closes the open panel on an outside click', () => {
+    render(
+      <FilterBar
+        activeFilters={EMPTY_FILTERS}
+        onToggle={vi.fn()}
+        onClear={vi.fn()}
+      />,
+    )
+
+    fireEvent.click(screen.getByRole('button', { name: '按体验类型' }))
+    fireEvent.mouseDown(document.body)
+
+    expect(
+      screen.queryByRole('button', { name: '亚轨道' }),
+    ).not.toBeInTheDocument()
+  })
+
+  it('closes the open panel on Escape', () => {
+    render(
+      <FilterBar
+        activeFilters={EMPTY_FILTERS}
+        onToggle={vi.fn()}
+        onClear={vi.fn()}
+      />,
+    )
+
+    fireEvent.click(screen.getByRole('button', { name: '按体验类型' }))
+    fireEvent.keyDown(document, { key: 'Escape' })
+
+    expect(
+      screen.queryByRole('button', { name: '亚轨道' }),
+    ).not.toBeInTheDocument()
   })
 
   it('hides the clear button when no filters are active', () => {

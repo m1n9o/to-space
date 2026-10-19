@@ -1,0 +1,205 @@
+id: prj_zephalto
+slug: zephalto
+name: 平流层气球飞行
+operatorName: Zephalto
+countryOrRegion: 法国
+description: 平流层气球加加压舱，升至约 25 km 高空。不进入太空，也没有失重体验。尚未开始载客商业飞行。
+missionType: NEAR_SPACE
+participationPathways: [PURCHASE]
+experienceDescription: 全程约 6 小时：上升约 1.5 小时，在顶部停留约 3 小时，下降约 1.5 小时。乘客在加压舱内观看地球曲率与黑色天空。
+targetCustomerSegments: [HIGH_NET_WORTH_INDIVIDUAL]
+developmentStage: TESTING
+commercialAvailability: PRE_SALE
+classificationVerifiedAt: '2026-10-19'
+classificationSourceIds: [src_zephalto-home, src_zephalto-cgv]
+officialWebsiteUrl: https://www.zephalto.com/
+officialBookingUrl: https://book.zephalto.com/
+officialContactUrl: https://www.zephalto.com/contact-us
+firstPublishedAt: '2026-09-16'
+
+facts:
+  - id: fct_zephalto-price
+    factType: PUBLIC_PRICE
+    value:
+      kind: money
+      amount: '180000'
+      currency: EUR
+      priceKind: OFFICIAL_LIST_PRICE
+      inclusions: 含税及取消保险
+      extraCostsDisclosed: true
+    label: 每位乘客，自 2025 年 11 月起适用
+    validFrom: '2025-11-01'
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_zephalto-faq, src_zephalto-cgv]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: FAQ 与销售条款均为 €180,000
+
+  - id: fct_zephalto-deposit
+    factType: DEPOSIT_AMOUNT
+    value:
+      {
+        kind: money,
+        amount: '36000',
+        currency: EUR,
+        priceKind: OFFICIAL_LIST_PRICE,
+      }
+    label: 定金合计 20%：注册时预付 €10,000（30 天内可申请退还），30 天内补付 €26,000；余款 €144,000 在飞行窗口公布后 30 天内付清
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_zephalto-cgv]
+
+  - id: fct_zephalto-refund
+    factType: REFUND_POLICY
+    value:
+      kind: text
+      text: 14 天消费者撤回权；之后仅在保险覆盖的原因下退款，余款支付前扣 €2,000、之后扣 €10,000，未到场不退；公司可延期最多 3 年，逾期全额退款（扣银行费用）
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_zephalto-cgv]
+    notes: 销售条款第 7–10 条。飞行满 4 小时且达到 20 km 视为完成，否则安排重飞。
+
+  - id: fct_zephalto-sales-waitlist
+    factType: TICKET_SALES_STATUS
+    value: { kind: availability, status: WAITLIST_OR_INTEREST }
+    label: 迁移自旧版标签"等待名单"
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: LOW
+    sourceIds: [src_zephalto-faq]
+
+  - id: fct_zephalto-sales-presale
+    factType: TICKET_SALES_STATUS
+    value: { kind: availability, status: PRE_SALE }
+    label: 付费预订开放；首批飞行至 2027 年秋已售罄
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    supersedes: fct_zephalto-sales-waitlist
+    sourceIds: [src_zephalto-cgv, src_zephalto-home]
+    notes: 需支付定金，属于付费预订而非候补名单，故更正。
+
+  - id: fct_zephalto-target
+    factType: TARGET_FLIGHT_DATE
+    value: { kind: date, date: '2027-11' }
+    label: 可预订的下一批飞行窗口自 2027 年 11 月起，延伸至 2028 年
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: MEDIUM
+    sourceIds: [src_zephalto-cgv]
+    notes: 旧版标为"已确认"；尚无任何载客飞行，日期属于公司计划。
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: COMPANY_TARGET
+        basis: 销售条款（2026 年 6 月版）原文仍为自 2027 年 11 月起
+
+  - id: fct_zephalto-altitude
+    factType: ALTITUDE
+    value: { kind: quantity, amount: 25, unit: KM, qualifier: APPROX }
+    label: 未越过 100 km 卡门线，不是太空
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_zephalto-faq]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: FAQ 原文为 25 km
+
+  - id: fct_zephalto-duration
+    factType: FLIGHT_DURATION
+    value: { kind: quantity, amount: 6, unit: HOUR, qualifier: APPROX }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_zephalto-faq]
+
+  - id: fct_zephalto-weightless
+    factType: WEIGHTLESSNESS_DURATION
+    value: { kind: text, text: 无失重体验 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_zephalto-faq]
+
+  - id: fct_zephalto-training
+    factType: TRAINING_DURATION
+    value: { kind: text, text: 无需专业训练，能乘坐商业航班即可参加 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_zephalto-faq]
+
+  - id: fct_zephalto-eligibility-v1
+    factType: ELIGIBILITY_REQUIREMENTS
+    value: { kind: text, text: 接近高端航空旅行标准，非火箭发射标准 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: LOW
+    sourceIds: [src_zephalto-faq]
+
+  - id: fct_zephalto-eligibility-v2
+    factType: ELIGIBILITY_REQUIREMENTS
+    value:
+      kind: text
+      text: 销售条款排除 6 岁以下儿童、怀孕 7 个月以上、需呼吸辅助者及严重疾病患者（可申请豁免）；未成年人需成人陪同；保险方可能要求体检
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    supersedes: fct_zephalto-eligibility-v1
+    sourceIds: [src_zephalto-cgv, src_zephalto-faq]
+    notes: FAQ 称"无年龄与身体条件限制"，与销售条款不一致；以具有约束力的销售条款为准。
+
+events:
+  - id: evt_zephalto-crewed-test
+    eventType: VEHICLE_TEST_COMPLETED
+    title: 首次载人平流层气球试飞
+    summary: 官网路线图同时出现 2023 与 2024 两种年份；相关报道链接日期为 2024-11-15。
+    occurredAt: '2024'
+    recordedAt: '2026-10-19'
+    verificationStatus: DISPUTED
+    sourceIds: [src_zephalto-home]
+  - id: evt_zephalto-altair
+    eventType: OTHER
+    title: 发布 Altaïr 乘员舱
+    announcedAt: '2026-04-16'
+    recordedAt: '2026-10-19'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_zephalto-home]
+
+assessments:
+  - kind: RISK
+    text: 不是真正意义的太空（约 25 km，远低于 100 km），也没有失重
+    asOf: '2026-09-16'
+  - kind: JUDGMENT
+    text: 旧版数据曾描述为"商业运营中、已有商业运营记录"，复核确认尚未开始载客商业飞行，已更正
+    asOf: '2026-10-19'
+    sourceIds: [src_zephalto-home]
+  - kind: INFO_GAP
+    text: 官网首页"2026 年"与路线图"2027 年向公众开放"说法不一致；乘员舱 EASA 认证尚未完成
+    asOf: '2026-10-19'
+    sourceIds: [src_zephalto-home, src_zephalto-faq]
+  - kind: ACTION_ADVICE
+    text: 支付定金前阅读销售条款第 7–10 条，确认取消费用与延期退款条件
+    asOf: '2026-10-19'
+    sourceIds: [src_zephalto-cgv]

@@ -1,0 +1,33 @@
+name: Check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run data:validate
+      # 已发布的事实只能追加，不能修改或删除
+      - name: Check append-only history
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            npm run data:check-history -- "origin/${{ github.base_ref }}"
+          elif [ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]; then
+            npm run data:check-history -- "${{ github.event.before }}"
+          fi
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test

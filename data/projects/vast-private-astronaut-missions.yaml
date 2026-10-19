@@ -1,0 +1,171 @@
+id: prj_vast-private-astronaut-missions
+slug: vast-private-astronaut-missions
+name: 私人宇航员任务（ISS / Haven-1）
+operatorName: Vast（SpaceX Dragon 运输）
+countryOrRegion: 美国
+description: Vast 提供两条路径。一是 NASA 第六次国际空间站私人宇航员任务（Vast-PAM-1）；二是自建的商业空间站 Haven-1，计划 2027 年发射。Haven-1 站体尚未发射，载人任务尚未验证。
+missionType: SPACE_STATION_MISSION
+participationPathways: [PURCHASE]
+experienceDescription: Haven-1 运行在 425 km、51.6° 倾角轨道，可容纳 4 名乘员执行两周任务。ISS 任务最多停靠约 14 天。
+targetCustomerSegments:
+  [
+    GOVERNMENT_OR_NATIONAL_AGENCY,
+    RESEARCH_INSTITUTION,
+    HIGH_NET_WORTH_INDIVIDUAL,
+  ]
+developmentStage: PREPARING_FIRST_CREWED_FLIGHT
+commercialAvailability: CONTACT_SALES
+classificationVerifiedAt: '2026-10-19'
+classificationSourceIds: [src_vast-haven-1, src_vast-pam, src_nasa-pam6]
+officialWebsiteUrl: https://www.vastspace.com/
+officialContactUrl: https://www.vastspace.com/private-astronaut-mission
+firstPublishedAt: '2026-09-16'
+
+facts:
+  - id: fct_vast-price
+    factType: PUBLIC_PRICE
+    value: { kind: undisclosed, note: 询价制 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_vast-pam]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: Vast 各页面均无价格
+
+  - id: fct_vast-sales
+    factType: TICKET_SALES_STATUS
+    value: { kind: availability, status: CONTACT_SALES }
+    label: 通过 fly@vastspace.com 询价，无在线预订
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_vast-pam]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 页面仍为"Inquire Now"邮件询价
+
+  - id: fct_vast-pam1-target
+    factType: TARGET_FLIGHT_DATE
+    value: { kind: date, date: '2027' }
+    label: Vast-PAM-1（ISS）不早于 2027 年夏季
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: MEDIUM
+    sourceIds: [src_nasa-pam6]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: COMPANY_TARGET
+        basis: 2026-06-01 Vast 公告重申不早于 2027 年夏季；未见延期公告
+        sourceIds: [src_vast-france]
+
+  - id: fct_vast-haven1-launch
+    factType: OTHER
+    value: { kind: date, date: '2027' }
+    label: Haven-1 发射目标（Falcon 9），首批乘员在发射后数周内抵达
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: MEDIUM
+    sourceIds: [src_vast-haven-1, src_vast-create]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: COMPANY_TARGET
+        basis: ESA 合作公告（2026-10-06）仍称预计 2027 年发射
+        sourceIds: [src_vast-esa-mou]
+
+  - id: fct_vast-duration
+    factType: FLIGHT_DURATION
+    value: { kind: quantity, amount: 14, unit: DAY, qualifier: MAX }
+    label: ISS 任务最多停靠约 14 天；Haven-1 为两周任务
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_nasa-pam6, src_vast-haven-1]
+
+  - id: fct_vast-altitude
+    factType: ALTITUDE
+    value: { kind: quantity, amount: 425, unit: KM, qualifier: APPROX }
+    label: Haven-1 设计轨道（51.6° 倾角）
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: MEDIUM
+    sourceIds: [src_vast-haven-1]
+
+  - id: fct_vast-training
+    factType: TRAINING_DURATION
+    value:
+      { kind: text, text: 官网仅列出"第一阶段：SpaceX 训练"，未公布时长与内容 }
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_vast-create]
+
+  - id: fct_vast-eligibility
+    factType: ELIGIBILITY_REQUIREMENTS
+    value:
+      {
+        kind: text,
+        text: ISS 任务乘员须经 NASA 与国际伙伴审批；未公布医学或其他资格标准,
+      }
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_nasa-pam6]
+
+events:
+  - id: evt_vast-pam6-selected
+    eventType: OTHER
+    title: NASA 选定 Vast 执行第六次私人宇航员任务
+    announcedAt: '2026-02-12'
+    recordedAt: '2026-09-16'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_nasa-pam6]
+  - id: evt_vast-france
+    eventType: OTHER
+    title: 与法国签署两次任务协议；Arnaud Prost 将参加 Haven-1 首次载人任务
+    announcedAt: '2026-06-01'
+    recordedAt: '2026-10-19'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_vast-france]
+  - id: evt_vast-pam1-crew
+    eventType: OTHER
+    title: 公布 Vast-PAM-1 三名乘员（Pesquet、Svoboda、Golemis）
+    summary: 第四名乘员待公布；Golemis 仍需审批。
+    announcedAt: '2026-09-09'
+    recordedAt: '2026-10-19'
+    businessImpact: 首次任务的席位以国家航天机构为主。
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_vast-greece]
+  - id: evt_vast-esa-mou
+    eventType: OTHER
+    title: 与欧空局签署新的合作备忘录，Haven-1 载人运营仍以 2027 年为目标
+    announcedAt: '2026-10-06'
+    recordedAt: '2026-10-19'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_vast-esa-mou]
+
+assessments:
+  - kind: RISK
+    text: Haven-1 站体尚未发射，载人任务尚未验证；需要区分 Dragon 运输的成熟度与 Haven-1 站体的成熟度
+    asOf: '2026-10-19'
+  - kind: INFO_GAP
+    text: /haven-1 页面仍保留"2026 年 5 月发射"的旧进度条目，官方其他页面写的是 2027 年
+    asOf: '2026-10-19'
+    sourceIds: [src_vast-haven-1]
+  - kind: INFO_GAP
+    text: 价格、退款与医学标准均未公开
+    asOf: '2026-10-19'

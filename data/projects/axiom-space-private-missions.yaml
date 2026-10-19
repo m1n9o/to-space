@@ -1,0 +1,185 @@
+id: prj_axiom-space-private-missions
+slug: axiom-space-private-missions
+name: 国际空间站私人宇航员任务（Ax 系列）
+operatorName: Axiom Space（SpaceX Crew Dragon 运输）
+countryOrRegion: 美国
+description: Axiom 组织私人乘员搭乘 SpaceX Crew Dragon 前往国际空间站，任务须经 NASA 批准。已完成 Ax-1 至 Ax-4 四次任务。客户以国家航天机构和科研机构为主，采用询价制。
+missionType: SPACE_STATION_MISSION
+participationPathways: [PURCHASE]
+experienceDescription: 在国际空间站停靠最多约 14 天，乘员需完成数百小时的系统训练。
+targetCustomerSegments:
+  [
+    GOVERNMENT_OR_NATIONAL_AGENCY,
+    RESEARCH_INSTITUTION,
+    HIGH_NET_WORTH_INDIVIDUAL,
+    CORPORATE_OR_BRAND,
+  ]
+developmentStage: COMMERCIAL_OPERATIONS
+commercialAvailability: CONTACT_SALES
+classificationVerifiedAt: '2026-10-19'
+classificationSourceIds: [src_nasa-pam, src_axiom-human-spaceflight]
+officialWebsiteUrl: https://www.axiomspace.com/
+officialContactUrl: https://www.axiomspace.com/human-spaceflight
+firstPublishedAt: '2026-09-16'
+
+facts:
+  - id: fct_axiom-price-undisclosed
+    factType: PUBLIC_PRICE
+    value: { kind: undisclosed, note: 询价制，官方不公开单座价格 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_axiom-human-spaceflight, src_space-com-ax3]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: Axiom 任务页与载人航天页均无价格
+
+  - id: fct_axiom-price-ax1-estimate
+    factType: PUBLIC_PRICE
+    value:
+      {
+        kind: money,
+        amount: '55000000',
+        currency: USD,
+        priceKind: THIRD_PARTY_ESTIMATE,
+      }
+    label: Ax-1 每位乘员约 5,500 万美元（媒体估算，非官方报价）
+    validUntil: '2022-04-30'
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: REPORTED_UNCONFIRMED
+    confidenceLevel: MEDIUM
+    sourceIds: [src_space-com-ax3]
+    notes: 仅适用于 Ax-1（2022 年 4 月），不代表当前价格。
+
+  - id: fct_axiom-sales
+    factType: TICKET_SALES_STATUS
+    value: { kind: availability, status: CONTACT_SALES }
+    label: 迁移自旧版标签"可预订/询价"；官网无在线预订或询价表单
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_axiom-human-spaceflight]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 官网"Start Your Mission"仅为介绍页；页面按钮链接为空，唯一表单是订阅通讯
+
+  - id: fct_axiom-ax5-target
+    factType: TARGET_FLIGHT_DATE
+    value: { kind: date, date: '2027-01' }
+    label: Ax-5 不早于 2027 年 1 月从肯尼迪航天中心发射
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: MEDIUM
+    sourceIds: [src_nasa-ax5]
+    notes: 旧版标为"已确认"。NET（不早于）日期属于计划目标，已按公司目标记录。
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: COMPANY_TARGET
+        basis: Axiom 任务页仍标注 NET January 2027；CEO 2026-09-25 仅称"目标 2027 年"
+        sourceIds: [src_axiom-missions, src_startmag-ax5]
+
+  - id: fct_axiom-duration
+    factType: FLIGHT_DURATION
+    value: { kind: quantity, amount: 14, unit: DAY, qualifier: MAX }
+    label: Ax-5 计划停靠国际空间站最多约 14 天
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_nasa-ax5]
+
+  - id: fct_axiom-training-v1
+    factType: TRAINING_DURATION
+    value: { kind: text, text: '约 700–1,000 小时，跨度约 10 个月' }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_axiom-ax1]
+
+  - id: fct_axiom-training-v2
+    factType: TRAINING_DURATION
+    value: { kind: text, text: 'Ax-1 乘员完成 700–1,000 小时训练' }
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    supersedes: fct_axiom-training-v1
+    sourceIds: [src_axiom-ax1]
+    notes: 复核时官网未找到"约 10 个月"的说法，已删去。
+
+  - id: fct_axiom-eligibility
+    factType: ELIGIBILITY_REQUIREMENTS
+    value:
+      {
+        kind: text,
+        text: 乘员由 Axiom 提名，须经 NASA 与国际伙伴审核批准，再与 NASA、伙伴及发射商共同训练；未公开医学标准,
+      }
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_nasa-ax5]
+
+events:
+  - id: evt_axiom-ax1
+    eventType: CREWED_FLIGHT_COMPLETED
+    title: Ax-1 私人宇航员任务
+    occurredAt: '2022-04'
+    recordedAt: '2026-09-16'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_nasa-pam, src_axiom-ax1]
+  - id: evt_axiom-ax2
+    eventType: CREWED_FLIGHT_COMPLETED
+    title: Ax-2 私人宇航员任务
+    occurredAt: '2023-05'
+    recordedAt: '2026-09-16'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_nasa-pam]
+  - id: evt_axiom-ax3
+    eventType: CREWED_FLIGHT_COMPLETED
+    title: Ax-3 私人宇航员任务
+    occurredAt: '2024-01'
+    recordedAt: '2026-09-16'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_nasa-pam]
+  - id: evt_axiom-ax4
+    eventType: CREWED_FLIGHT_COMPLETED
+    title: Ax-4 私人宇航员任务
+    summary: 2025-06-25 发射，2025-07-15 溅落；乘员 Whitson、Shukla、Uznański-Wiśniewski、Kapu。
+    occurredAt: '2025-06-25'
+    recordedAt: '2026-09-16'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_nasa-pam, src_axiom-missions]
+  - id: evt_axiom-ax5-selected
+    eventType: OTHER
+    title: NASA 选定 Axiom 执行第五次私人宇航员任务（Ax-5）
+    announcedAt: '2026-01-30'
+    recordedAt: '2026-09-16'
+    businessImpact: 乘员尚未公布，仍待最终协议与各国审批。
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_nasa-ax5]
+
+assessments:
+  - kind: RISK
+    text: 询价制，个人很难直接购买；不是在线购票模式
+    asOf: '2026-10-19'
+  - kind: JUDGMENT
+    text: 客户结构越来越偏向国家航天机构与科研机构
+    asOf: '2026-09-16'
+  - kind: INFO_GAP
+    text: Ax-5 乘员未公布；CEO 于 2026-09-25 称意大利宇航员参与是"具体可能"，截至 2026-10-19 未见官方公告
+    asOf: '2026-10-19'
+    sourceIds: [src_startmag-ax5]
+  - kind: INFO_GAP
+    text: 押金、退款与医学标准均未公开
+    asOf: '2026-10-19'

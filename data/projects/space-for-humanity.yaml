@@ -1,0 +1,134 @@
+id: prj_space-for-humanity
+slug: space-for-humanity
+name: 公民宇航员计划
+operatorName: Space for Humanity（非营利组织）
+countryOrRegion: 美国
+description: 非营利组织 Space for Humanity 选拔"公民宇航员"并全额赞助其飞行，不绑定特定飞行器，历史上使用的是 Blue Origin New Shepard。申请已于 2022 年关闭，目前没有公开的飞行计划。
+missionType: SUBORBITAL
+participationPathways: [SPONSORSHIP, APPLICATION_SELECTION]
+experienceDescription: 一年期计划，包括飞前训练、飞行和飞行后的领导力发展计划。选拔分三轮，由委员会评审。
+targetCustomerSegments: [INDIVIDUAL]
+developmentStage: CREWED_FLIGHT_DEMONSTRATED
+commercialAvailability: APPLICATION_CLOSED
+classificationVerifiedAt: '2026-10-19'
+classificationSourceIds: [src_sfh-apply, src_sfh-crew-cas]
+officialWebsiteUrl: https://spaceforhumanity.org/
+dependsOnProjectIds: [prj_blue-origin-new-shepard]
+firstPublishedAt: '2026-09-16'
+
+facts:
+  - id: fct_sfh-cost
+    factType: PUBLIC_PRICE
+    value:
+      { kind: free, note: 入选者的训练、飞行票、差旅与住宿等全部由项目赞助 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_sfh-apply]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 申请页原文未变
+
+  - id: fct_sfh-sales
+    factType: TICKET_SALES_STATUS
+    value: { kind: availability, status: APPLICATION_CLOSED }
+    label: 申请已于 2022-11-15 关闭，未公布重新开放时间
+    validFrom: '2022-11-15'
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_sfh-apply]
+    notes: 首页与"关于"页仍显示"申请参加 Humanity-1"，属于过时内容。
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 申请页仍显示 Applications are closed
+
+  - id: fct_sfh-target
+    factType: TARGET_FLIGHT_DATE
+    value: { kind: undisclosed, note: 官网称目前没有公开的飞行日期 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_sfh-apply]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 申请页原文为 no publicly scheduled flight dates
+
+  - id: fct_sfh-eligibility
+    factType: ELIGIBILITY_REQUIREMENTS
+    value:
+      {
+        kind: text,
+        text: 需具备英语能力；现任志愿者、包容委员会与顾问委员会成员不可申请；往届申请者可再次申请；未公布年龄与国籍要求,
+      }
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_sfh-apply]
+
+  - id: fct_sfh-training
+    factType: TRAINING_DURATION
+    value:
+      {
+        kind: text,
+        text: 一年期计划，包含体能、心理、情绪与后勤方面的飞前训练，以及飞行后支持,
+      }
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_sfh-apply]
+
+events:
+  - id: evt_sfh-ca1
+    eventType: CREWED_FLIGHT_COMPLETED
+    title: 公民宇航员 Katya Echazarreta 搭乘 NS-21 飞行
+    occurredAt: '2022-06-04'
+    recordedAt: '2026-10-19'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_sfh-crew-cas]
+  - id: evt_sfh-ca2
+    eventType: CREWED_FLIGHT_COMPLETED
+    title: 公民宇航员 Sara Sabry 搭乘 NS-22 飞行
+    occurredAt: '2022-08-04'
+    recordedAt: '2026-10-19'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_sfh-crew-cas]
+  - id: evt_sfh-applications-closed
+    eventType: OTHER
+    title: 公民宇航员申请关闭
+    occurredAt: '2022-11-15'
+    recordedAt: '2026-10-19'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_sfh-apply]
+  - id: evt_sfh-dwight
+    eventType: CREWED_FLIGHT_COMPLETED
+    title: Ed Dwight 搭乘 NS-25 飞行（部分由本项目赞助）
+    summary: 官方页面确认部分赞助，但未给出日期；日期来自媒体报道。
+    occurredAt: '2024-05'
+    recordedAt: '2026-10-19'
+    verificationStatus: REPORTED_UNCONFIRMED
+    sourceIds: [src_sfh-ambassadors]
+
+assessments:
+  - kind: RISK
+    text: 历史承运方 New Shepard 自 2026-01-30 起暂停飞行不少于两年；官网列出的其他承运商目前状态未知
+    asOf: '2026-10-19'
+    sourceIds: [src_bo-pause]
+  - kind: JUDGMENT
+    text: 组织仍在运营（2026 年有月度动态），但航天赞助项目处于停滞状态；2026 年活动以抛物线失重飞行为主，那不是太空飞行
+    asOf: '2026-10-19'
+  - kind: INFO_GAP
+    text: 首页仍显示旧的申请入口；联系页面返回 404
+    asOf: '2026-10-19'
+    sourceIds: [src_sfh-home]

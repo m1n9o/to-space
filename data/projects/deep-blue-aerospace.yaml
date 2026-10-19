@@ -1,0 +1,217 @@
+id: prj_deep-blue-aerospace
+slug: deep-blue-aerospace
+name: 亚轨道载人飞行
+operatorName: 深蓝航天 Deep Blue Aerospace
+countryOrRegion: 中国
+description: 计划使用可回收火箭与载人飞船开展亚轨道旅游。2024 年 10 月以直播方式预售首批 2 个名额。至今没有任何载人或飞船飞行记录。
+missionType: SUBORBITAL
+participationPathways: [PURCHASE]
+experienceDescription: 公司目标：飞越 100 km，全程约 12 分钟，失重不少于 5 分钟，伞降返回。
+targetCustomerSegments: [INDIVIDUAL, HIGH_NET_WORTH_INDIVIDUAL]
+developmentStage: DEVELOPMENT
+commercialAvailability: SOLD_OUT
+classificationVerifiedAt: '2026-10-19'
+classificationSourceIds: [src_cls-1836569, src_sina-dba-2026-09-27]
+officialWebsiteUrl: https://www.dbaspace.com/
+officialContactUrl: https://www.dbaspace.com/
+firstPublishedAt: '2026-09-16'
+
+facts:
+  - id: fct_dba-price-presale
+    factType: PUBLIC_PRICE
+    value:
+      {
+        kind: money,
+        amount: '1500000',
+        currency: CNY,
+        priceKind: PRE_SALE_PRICE,
+      }
+    label: 首批预售全款定价（直播间到手价 ¥1,000,000）
+    validFrom: '2024-10-24'
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: CORROBORATED
+    confidenceLevel: MEDIUM
+    sourceIds: [src_cls-1836569, src_nbd-3605077]
+
+  - id: fct_dba-price-historical
+    factType: PUBLIC_PRICE
+    value:
+      {
+        kind: money,
+        amount: '1500000',
+        currency: CNY,
+        priceKind: HISTORICAL_PRICE,
+      }
+    label: 2024 年 10 月首批预售定价；此后未见新的公开价格
+    validFrom: '2024-10-24'
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: CORROBORATED
+    confidenceLevel: MEDIUM
+    supersedes: fct_dba-price-presale
+    sourceIds: [src_cls-1836569, src_nbd-3605077]
+    notes: 首批名额已售出，未找到之后的销售，因此改记为历史价格，不再作为当前预售价参与比较。
+
+  - id: fct_dba-deposit
+    factType: DEPOSIT_AMOUNT
+    value:
+      {
+        kind: money,
+        amount: '50000',
+        currency: CNY,
+        priceKind: HISTORICAL_PRICE,
+      }
+    label: 2024 年预售订金，可抵扣全款
+    validFrom: '2024-10-24'
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: REPORTED_UNCONFIRMED
+    confidenceLevel: MEDIUM
+    sourceIds: [src_nbd-3605077]
+
+  - id: fct_dba-refund
+    factType: REFUND_POLICY
+    value:
+      {
+        kind: text,
+        text: 2024 年预售规则：支付订金 7 天内可无理由退款，超过 7 天订金不予退还；提前 6 个月申请可免费改期一次,
+      }
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: REPORTED_UNCONFIRMED
+    confidenceLevel: MEDIUM
+    sourceIds: [src_nbd-3605077]
+
+  - id: fct_dba-sales-presale
+    factType: TICKET_SALES_STATUS
+    value: { kind: availability, status: PRE_SALE }
+    label: 迁移自旧版标签"预售中"
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: REPORTED_UNCONFIRMED
+    confidenceLevel: LOW
+    sourceIds: [src_cls-1836569]
+
+  - id: fct_dba-sales-sold-out
+    factType: TICKET_SALES_STATUS
+    value: { kind: availability, status: SOLD_OUT }
+    label: 2024 年 10 月首批 2 个名额售出后显示无货；未找到之后的公开销售
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: CORROBORATED
+    confidenceLevel: MEDIUM
+    supersedes: fct_dba-sales-presale
+    sourceIds: [src_cls-1836569, src_nbd-3605077]
+    notes: 公司当时称次月继续销售，但未找到相关记录。
+
+  - id: fct_dba-target-2027
+    factType: TARGET_FLIGHT_DATE
+    value: { kind: date, date: '2027' }
+    label: 首批游客飞行目标（2024 年公布）
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: LOW
+    sourceIds: [src_cls-1836569, src_reuters-deep-blue-2024]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: COMPANY_TARGET
+        basis: 未找到 2025–2026 年对该目标的重申或调整
+        sourceIds: [src_sina-dba-2026-09-27]
+        notes: 星云一号入轨首飞仍未完成，星云二号计划 2027 年底首飞。
+
+  - id: fct_dba-duration
+    factType: FLIGHT_DURATION
+    value: { kind: quantity, amount: 12, unit: MINUTE, qualifier: APPROX }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: LOW
+    sourceIds: [src_cls-1836569]
+
+  - id: fct_dba-altitude
+    factType: ALTITUDE
+    value: { kind: quantity, amount: 100, unit: KM, qualifier: MIN }
+    label: 目标高度，未经验证
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: LOW
+    sourceIds: [src_cls-1836569]
+
+  - id: fct_dba-weightless
+    factType: WEIGHTLESSNESS_DURATION
+    value: { kind: quantity, amount: 5, unit: MINUTE, qualifier: MIN }
+    label: 目标值
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: LOW
+    sourceIds: [src_cls-1836569]
+
+  - id: fct_dba-eligibility
+    factType: ELIGIBILITY_REQUIREMENTS
+    value:
+      {
+        kind: text,
+        text: 建议年龄 18–60 岁；需通过专业健康检测，特殊情况需医学评估,
+      }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: CORROBORATED
+    confidenceLevel: MEDIUM
+    sourceIds: [src_sciencenet-532478, src_nbd-3605077]
+
+  - id: fct_dba-training
+    factType: TRAINING_DURATION
+    value: { kind: text, text: 飞行前至少 1 个月参加安全培训 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: CORROBORATED
+    confidenceLevel: MEDIUM
+    sourceIds: [src_sciencenet-532478, src_nbd-3605077]
+
+events:
+  - id: evt_dba-presale-2024
+    eventType: TICKET_SALES_OPENED
+    title: 直播预售首批亚轨道船票（2 个名额）
+    summary: 全款定价 150 万元，直播间到手价 100 万元，订金 5 万元。
+    occurredAt: '2024-10-24'
+    recordedAt: '2026-09-16'
+    businessImpact: 首批名额售出后显示无货；之后未见新的公开销售。
+    verificationStatus: CORROBORATED
+    sourceIds: [src_cls-1836569, src_nbd-3605077]
+  - id: evt_dba-funding-2026-09
+    eventType: FUNDING_OR_OWNERSHIP_CHANGE
+    title: 完成约 20 亿元 B6/B7 轮融资
+    summary: 资金用于星云一号/二号火箭与雷霆发动机。
+    announcedAt: '2026-09'
+    recordedAt: '2026-10-19'
+    businessImpact: 报道未提及载人旅游项目。
+    verificationStatus: REPORTED_UNCONFIRMED
+    sourceIds: [src_sina-dba-2026-09-27]
+  - id: evt_dba-nebula2-tank
+    eventType: OTHER
+    title: 星云二号 5 米不锈钢共底贮箱下线
+    occurredAt: '2026-10-12'
+    recordedAt: '2026-10-19'
+    verificationStatus: REPORTED_UNCONFIRMED
+    sourceIds: [src_qq-nebula2-tank]
+
+assessments:
+  - kind: RISK
+    text: 尚无任何载人或载人飞船飞行记录；载人飞船、逃逸与生保系统的验证进展没有公开信息
+    asOf: '2026-10-19'
+  - kind: JUDGMENT
+    text: 星云一号入轨首飞多次推迟、至今未完成，2027 年载人旅游目标不确定性很高
+    asOf: '2026-10-19'
+    sourceIds: [src_sina-dba-2026-09-27]
+  - kind: INFO_GAP
+    text: 官网没有太空旅游页面；2024 年之后未找到售票信息，也未找到对 2027 年目标的重申或调整
+    asOf: '2026-10-19'
+    sourceIds: [src_dbaspace-home]
+  - kind: ACTION_ADVICE
+    text: 如再次开售，付款前书面确认飞行时间、订金退还与改期条款
+    asOf: '2026-10-19'

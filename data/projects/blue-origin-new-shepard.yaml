@@ -1,0 +1,221 @@
+id: prj_blue-origin-new-shepard
+slug: blue-origin-new-shepard
+name: New Shepard 亚轨道飞行
+operatorName: Blue Origin
+countryOrRegion: 美国
+description: 全自动垂直起降火箭与乘员舱，载客越过 100 km 卡门线后伞降返回。已完成大量商业载人飞行，2026 年 1 月宣布暂停飞行不少于两年。
+missionType: SUBORBITAL
+participationPathways: [PURCHASE]
+experienceDescription: 乘员舱最多 6 人。发射约 3 分 30 秒后越过卡门线，经历数分钟失重，约 11 分钟后着陆。无需乘客驾驶。
+targetCustomerSegments: [HIGH_NET_WORTH_INDIVIDUAL, CORPORATE_OR_BRAND]
+developmentStage: PAUSED
+commercialAvailability: WAITLIST_OR_INTEREST
+classificationVerifiedAt: '2026-10-19'
+classificationSourceIds: [src_bo-pause, src_bo-experience]
+officialWebsiteUrl: https://www.blueorigin.com/new-shepard
+officialBookingUrl: https://www.blueorigin.com/new-shepard/experience
+firstPublishedAt: '2026-09-16'
+
+facts:
+  - id: fct_bo-ns-price-undisclosed
+    factType: PUBLIC_PRICE
+    value: { kind: undisclosed, note: 官网只公布押金，不公布票价 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_bo-experience]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 订购页面仍只显示押金，未显示票价
+
+  - id: fct_bo-ns-deposit-150k
+    factType: DEPOSIT_AMOUNT
+    value:
+      {
+        kind: money,
+        amount: '150000',
+        currency: USD,
+        priceKind: OFFICIAL_LIST_PRICE,
+      }
+    label: 开始订购流程需支付的押金，全额可退
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_bo-experience]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 订购页面原文仍为 $150,000 押金、全额可退
+
+  - id: fct_bo-ns-refund
+    factType: REFUND_POLICY
+    value: { kind: text, text: 押金全额可退；未找到其他退款条款 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_bo-experience]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 订购页面声明押金全额可退
+
+  - id: fct_bo-ns-sales-paused
+    factType: TICKET_SALES_STATUS
+    value: { kind: availability, status: SALES_PAUSED }
+    label: 迁移自旧版标签"当前暂停"
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_bo-pause]
+
+  - id: fct_bo-ns-sales-interest
+    factType: TICKET_SALES_STATUS
+    value: { kind: availability, status: WAITLIST_OR_INTEREST }
+    label: 飞行暂停，但订购意向表仍开放（需押金，官方说明不保证席位）
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    supersedes: fct_bo-ns-sales-paused
+    sourceIds: [src_bo-experience, src_bo-pause]
+    notes: 旧版把"飞行暂停"记为销售状态；复核发现订购意向表仍可提交，故更正。
+
+  - id: fct_bo-ns-target-none
+    factType: TARGET_FLIGHT_DATE
+    value: { kind: undisclosed, note: 无官方复飞日期 }
+    label: 自 2026-01-30 起暂停不少于两年
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_bo-pause]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 官网新闻室 2026-01-30 之后没有 New Shepard 复飞公告
+
+  - id: fct_bo-ns-training
+    factType: TRAINING_DURATION
+    value:
+      {
+        kind: text,
+        text: 2 天现场训练：任务剖面、安全系统、零重力规程与任务模拟,
+      }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_bo-fly]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 训练页面内容未变
+
+  - id: fct_bo-ns-eligibility
+    factType: ELIGIBILITY_REQUIREMENTS
+    value:
+      {
+        kind: text,
+        text: 依联邦法规须年满 18 岁；官网可访问页面未见身高、体重与医学要求,
+      }
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_bo-experience]
+
+  - id: fct_bo-ns-altitude
+    factType: ALTITUDE
+    value: { kind: quantity, amount: 100, unit: KM, qualifier: MIN }
+    label: 越过卡门线
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_bo-experience]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 官方时间线 T+3:30 越过卡门线
+
+  - id: fct_bo-ns-duration
+    factType: FLIGHT_DURATION
+    value: { kind: quantity, amount: 11, unit: MINUTE, qualifier: APPROX }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_bo-experience]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 官方时间线 T+11 分钟着陆
+
+  - id: fct_bo-ns-weightless
+    factType: WEIGHTLESSNESS_DURATION
+    value: { kind: text, text: 数分钟 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_bo-experience]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 官方时间线显示失重约在 T+3:30 至 T+6 之间
+        notes: 据时间线推算约 2.5 分钟，"数分钟"略有高估；推算值不作为官方数据记录。
+
+events:
+  - id: evt_bo-ns-34
+    eventType: CREWED_FLIGHT_COMPLETED
+    title: NS-34 载人飞行（含孙宇晨）
+    summary: New Shepard 第 14 次载人飞行。
+    occurredAt: '2025-08-03'
+    recordedAt: '2026-09-16'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_bo-ns34]
+  - id: evt_bo-ns-38
+    eventType: CREWED_FLIGHT_COMPLETED
+    title: NS-38 载人飞行
+    summary: 2026 年首次载人飞行，也是暂停前最后一次已知飞行。
+    occurredAt: '2026-01-22'
+    recordedAt: '2026-10-19'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_bo-ns38]
+  - id: evt_bo-ns-pause
+    eventType: PROGRAM_PAUSED
+    title: 宣布暂停 New Shepard 飞行不少于两年
+    summary: 截至公告，累计飞行 38 次，98 人次越过卡门线。
+    announcedAt: '2026-01-30'
+    recordedAt: '2026-09-16'
+    businessImpact: 已付押金客户的飞行时间无法确定；新的订购意向仍可提交，但官方说明不保证席位。
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_bo-pause]
+
+assessments:
+  - kind: RISK
+    text: 复飞时间未知，已有多年客户积压订单，新订购者排队位置不明
+    asOf: '2026-10-19'
+    sourceIds: [src_bo-pause]
+  - kind: JUDGMENT
+    text: 按"不少于两年"推算，最早约 2028 年复飞；这是推断，不是公司目标
+    asOf: '2026-10-19'
+  - kind: INFO_GAP
+    text: 最终票价不公开；身高、体重与医学要求未在可访问页面找到
+    asOf: '2026-10-19'
+  - kind: ACTION_ADVICE
+    text: 支付押金前书面确认押金退还流程与时限，并确认暂停期间订单如何处理
+    asOf: '2026-10-19'

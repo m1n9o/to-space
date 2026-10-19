@@ -1,0 +1,96 @@
+id: prj_spacex-crew-dragon-private
+slug: spacex-crew-dragon-private
+name: Crew Dragon 私人自由飞行任务
+operatorName: SpaceX
+countryOrRegion: 美国
+description: 包下整艘 Crew Dragon 执行定制的近地轨道任务，不停靠空间站，例如 Inspiration4、Polaris Dawn、Fram2。这不是标准零售产品，任务、价格与训练按合同逐项确定。
+missionType: ORBITAL
+participationPathways: [PURCHASE]
+experienceDescription: 轨道高度与时长取决于任务。例如 Fram2 采用极地轨道，高度 202–413 km，历时约 3.6 天。
+targetCustomerSegments: [HIGH_NET_WORTH_INDIVIDUAL, CORPORATE_OR_BRAND]
+developmentStage: COMMERCIAL_OPERATIONS
+commercialAvailability: CONTACT_SALES
+classificationVerifiedAt: '2026-10-19'
+classificationSourceIds: [src_wiki-fram2, src_spacex-hsf]
+officialWebsiteUrl: https://www.spacex.com/humanspaceflight
+firstPublishedAt: '2026-09-16'
+
+facts:
+  - id: fct_spacex-price
+    factType: PUBLIC_PRICE
+    value: { kind: undisclosed, note: 无公开标准票价，按任务报价 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_spacex-hsf-new]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: UNKNOWN
+        basis: 原官网页面已失效（522），新页面为纯 JavaScript 渲染，无法复核
+        sourceIds: [src_spacex-hsf]
+
+  - id: fct_spacex-sales
+    factType: TICKET_SALES_STATUS
+    value: { kind: availability, status: CONTACT_SALES }
+    label: 迁移自旧版标签"可预订/询价"
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_spacex-hsf-new, src_spacex-moon-new]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: UNKNOWN
+        basis: 原询价页面已失效（522），新页面内容无法读取，询价渠道未能复核
+        sourceIds: [src_spacex-hsf]
+
+  - id: fct_spacex-target
+    factType: TARGET_FLIGHT_DATE
+    value: { kind: undisclosed, note: 按任务排期，没有固定档期 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: UNKNOWN
+    confidenceLevel: LOW
+    notes: 2026-10-19 未找到已公布日期的私人自由飞行任务。
+
+  - id: fct_spacex-training
+    factType: TRAINING_DURATION
+    value:
+      {
+        kind: text,
+        text: 依任务而定，历史任务包含科研、影像、太空行走等专项训练,
+      }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: REPORTED_UNCONFIRMED
+    confidenceLevel: LOW
+    sourceIds: [src_reuters-polaris]
+
+events:
+  - id: evt_spacex-polaris-dawn
+    eventType: CREWED_FLIGHT_COMPLETED
+    title: Polaris Dawn 私人任务（含首次私人太空行走）
+    occurredAt: '2024-09'
+    recordedAt: '2026-09-16'
+    verificationStatus: REPORTED_UNCONFIRMED
+    sourceIds: [src_reuters-polaris]
+  - id: evt_spacex-fram2
+    eventType: CREWED_FLIGHT_COMPLETED
+    title: Fram2 极地轨道私人任务
+    summary: 2025-04-01 发射，2025-04-04 溅落，历时约 3.6 天。
+    occurredAt: '2025-04-01'
+    recordedAt: '2026-09-16'
+    verificationStatus: CORROBORATED
+    sourceIds: [src_reuters-fram2, src_wiki-fram2]
+
+assessments:
+  - kind: RISK
+    text: 不是标准零售产品，需要整体定制任务；固定票价的引用多为误传
+    asOf: '2026-09-16'
+  - kind: INFO_GAP
+    text: 2026-10-19 官网载人航天页面无法读取，询价渠道与当前可用性未能复核
+    asOf: '2026-10-19'
+    sourceIds: [src_spacex-hsf]

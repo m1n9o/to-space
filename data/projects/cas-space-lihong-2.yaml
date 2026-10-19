@@ -1,0 +1,173 @@
+id: prj_cas-space-lihong-2
+slug: cas-space-lihong-2
+name: 力鸿二号亚轨道载人飞行
+operatorName: 中科宇航 CAS Space
+countryOrRegion: 中国
+description: 力鸿二号是可重复使用的亚轨道运载器，设计可载 7 人或 3 吨货物。无人验证器力鸿一号已完成 120 km 亚轨道飞行。力鸿二号首飞计划为载货版，载人旅游仍处于远期规划。
+missionType: SUBORBITAL
+participationPathways: [PURCHASE]
+experienceDescription: 设计目标：高度不低于 100 km，微重力时间不少于 180 秒。
+targetCustomerSegments:
+  [INDIVIDUAL, HIGH_NET_WORTH_INDIVIDUAL, RESEARCH_INSTITUTION]
+developmentStage: DEVELOPMENT
+commercialAvailability: NOT_YET_OFFERED
+classificationVerifiedAt: '2026-10-19'
+classificationSourceIds: [src_cas-article-607, src_cas-list-43]
+officialWebsiteUrl: https://www.cas-space.com/
+officialContactUrl: https://www.cas-space.com/list/43.html
+firstPublishedAt: '2026-09-16'
+
+facts:
+  - id: fct_cas-price-target
+    factType: PUBLIC_PRICE
+    value:
+      {
+        kind: money,
+        amount: '2000000',
+        currency: CNY,
+        priceKind: MEDIA_REPORTED,
+      }
+    label: 董事长称前期票价"不会超过 200 万元"（上限目标，非报价）；远期可能降至约 70 万元
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: LOW
+    sourceIds: [src_sina-cas-2026-07-06]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: COMPANY_TARGET
+        basis: 原采访仍可访问；官网无票价
+        notes: 2026-09 展会上有工作人员称可降至约 100 万元，未给出时间与机型，按未核实信息处理。
+        sourceIds: [src_eastmoney-cas-2026-09-06]
+
+  - id: fct_cas-sales
+    factType: TICKET_SALES_STATUS
+    value: { kind: availability, status: NOT_YET_OFFERED }
+    label: 官网无售票入口
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_cas-list-43]
+    notes: 科技日报 2024 年曾称"已开放预订"，此后未见官方售票。
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 官网仍无售票或预订页面
+
+  - id: fct_cas-target-2028
+    factType: TARGET_FLIGHT_DATE
+    value: { kind: date, date: '2028' }
+    label: 游客上太空目标
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: LOW
+    sourceIds: [src_sina-cas-2026-07-06]
+
+  - id: fct_cas-target-2028-q4
+    factType: TARGET_FLIGHT_DATE
+    value: { kind: date, date: '2028-Q4' }
+    label: 董事长"乐观估计"2028 年底尝试普通人亚轨道旅行
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: LOW
+    supersedes: fct_cas-target-2028
+    sourceIds: [src_eastmoney-cas-2026-09-10]
+    notes: 前提是十余次连续成功飞行、生保与逃逸系统完成验证，并通过政府安全审查。
+
+  - id: fct_cas-ph2-first-flight
+    factType: OTHER
+    value: { kind: date, date: '2027-Q1' }
+    label: 力鸿二号（载货版）首飞目标，搭载太空制药载荷
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: MEDIUM
+    sourceIds: [src_cas-article-607]
+
+  - id: fct_cas-altitude
+    factType: ALTITUDE
+    value: { kind: quantity, amount: 100, unit: KM, qualifier: MIN }
+    label: 设计目标
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: MEDIUM
+    sourceIds: [src_cas-list-43]
+
+  - id: fct_cas-weightless
+    factType: WEIGHTLESSNESS_DURATION
+    value: { kind: quantity, amount: 180, unit: SECOND, qualifier: MIN }
+    label: 设计目标
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: MEDIUM
+    sourceIds: [src_cas-list-43]
+
+  - id: fct_cas-duration
+    factType: FLIGHT_DURATION
+    value: { kind: quantity, amount: 30, unit: MINUTE, qualifier: APPROX }
+    label: 2024 年早期方案，官网参数未列出
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: REPORTED_UNCONFIRMED
+    confidenceLevel: LOW
+    sourceIds: [src_stdaily-2024-05-15]
+
+  - id: fct_cas-eligibility
+    factType: ELIGIBILITY_REQUIREMENTS
+    value:
+      { kind: text, text: 未发布正式标准；董事长称身体条件要求比去拉萨还低 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: REPORTED_UNCONFIRMED
+    confidenceLevel: LOW
+    sourceIds: [src_sina-cas-2026-07-06]
+
+  - id: fct_cas-training
+    factType: TRAINING_DURATION
+    value: { kind: text, text: 早期方案包含短期飞前培训，具体安排未公布 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: REPORTED_UNCONFIRMED
+    confidenceLevel: LOW
+    sourceIds: [src_stdaily-2024-05-15]
+
+events:
+  - id: evt_cas-ph1-flight
+    eventType: UNCREWED_FLIGHT_COMPLETED
+    title: 力鸿一号无人亚轨道飞行（约 120 km，伞降回收）
+    summary: 在酒泉完成，返回舱落点精度约 100 m。
+    occurredAt: '2026-01-12'
+    recordedAt: '2026-09-16'
+    businessImpact: 验证了亚轨道飞行与回收，但无人验证不等于力鸿二号的载人能力。
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_cas-article-177]
+  - id: evt_cas-ph2-delay
+    eventType: TARGET_DATE_CHANGED
+    title: 力鸿二号首飞目标调整为 2027 年一季度（载货版）
+    announcedAt: '2026-09-28'
+    recordedAt: '2026-10-19'
+    previousValue: 2026 年内完成首飞与 100 km 级回收演示
+    newValue: 2027 年一季度首飞，搭载太空制药载荷
+    businessImpact: 载人旅游需在货运版多次成功飞行之后，整体时间表随之后移。
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_cas-article-607, src_cas-article-382]
+
+assessments:
+  - kind: RISK
+    text: 力鸿一号为无人验证器，不等于力鸿二号具备载人旅游能力
+    asOf: '2026-09-16'
+    sourceIds: [src_cas-article-177]
+  - kind: JUDGMENT
+    text: 公司自己把 2028 年底称为"乐观估计"，且附带多项前提条件，应按远期目标看待
+    asOf: '2026-10-19'
+    sourceIds: [src_eastmoney-cas-2026-09-10]
+  - kind: INFO_GAP
+    text: 没有官方售票、退款或资格标准；价格只见于董事长采访
+    asOf: '2026-10-19'

@@ -19,7 +19,6 @@ export function atlasPlugin(): Plugin {
       if (!result.atlas) {
         throw new Error(`数据校验失败：\n${formatIssues(result)}`)
       }
-      this.addWatchFile(DATA_DIR)
       return `export default ${JSON.stringify(result.atlas)}`
     },
     configureServer(server) {

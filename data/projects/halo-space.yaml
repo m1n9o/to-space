@@ -1,0 +1,190 @@
+id: prj_halo-space
+slug: halo-space
+name: 平流层气球舱飞行
+operatorName: HALO Space
+countryOrRegion: 西班牙
+description: 平流层气球加乘员舱，目标高度约 35 km。不进入太空，也没有失重体验。目前只完成无人原型测试，尚未开放预订。
+missionType: NEAR_SPACE
+participationPathways: [PURCHASE]
+experienceDescription: 乘员舱可容纳 1 名驾驶员和 8 名乘客；飞行 4–6 小时；含 7 天地面行程。首个运营基地在沙特阿拉伯，之后计划扩展到澳大利亚、西班牙和美国。
+targetCustomerSegments: [HIGH_NET_WORTH_INDIVIDUAL]
+developmentStage: TESTING
+commercialAvailability: WAITLIST_OR_INTEREST
+classificationVerifiedAt: '2026-10-19'
+classificationSourceIds: [src_halo-home, src_halo-faq]
+officialWebsiteUrl: https://www.halospaceflight.com/
+officialContactUrl: https://www.halospaceflight.com/contact-form
+firstPublishedAt: '2026-09-16'
+
+facts:
+  - id: fct_halo-price
+    factType: PUBLIC_PRICE
+    value:
+      {
+        kind: money,
+        amount: '150000',
+        currency: EUR,
+        priceKind: OFFICIAL_LIST_PRICE,
+      }
+    label: 已公布票价（美元标价 $165,000），尚未开放预订
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_halo-faq, src_halo-ground]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: FAQ 仍为 €150,000（$165,000）
+
+  - id: fct_halo-deposit
+    factType: DEPOSIT_AMOUNT
+    value: { kind: free, note: 加入候补名单无需订金 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_halo-faq]
+
+  - id: fct_halo-sales
+    factType: TICKET_SALES_STATUS
+    value: { kind: availability, status: WAITLIST_OR_INTEREST }
+    label: 尚不能预订，可免费加入候补名单
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_halo-faq]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: FAQ 原文仍为"can't book your flight just yet"
+
+  - id: fct_halo-target-2026
+    factType: TARGET_FLIGHT_DATE
+    value: { kind: date, date: '2026' }
+    label: 首次商业飞行目标
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: LOW
+    sourceIds: [src_halo-faq]
+
+  - id: fct_halo-target-2029
+    factType: TARGET_FLIGHT_DATE
+    value: { kind: date, date: '2029' }
+    label: 首次商业飞行目标，取决于技术成熟度、监管审批与运营准备
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: LOW
+    supersedes: fct_halo-target-2026
+    sourceIds: [src_halo-faq]
+    notes: 无法确定 FAQ 何时由 2026 改为 2029，只能确认 2026-10-19 时的内容。
+
+  - id: fct_halo-altitude
+    factType: ALTITUDE
+    value: { kind: quantity, amount: 35, unit: KM, qualifier: APPROX }
+    label: 未越过 100 km 卡门线，不是太空
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_halo-faq]
+    notes: FAQ 有一处小标题写作 40,000 m，另有"115,00 feet"笔误。
+
+  - id: fct_halo-duration-v1
+    factType: FLIGHT_DURATION
+    value: { kind: quantity, amount: 6, unit: HOUR, qualifier: APPROX }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_halo-ground]
+
+  - id: fct_halo-duration-v2
+    factType: FLIGHT_DURATION
+    value: { kind: text, text: 4–6 小时（视天气而定） }
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    supersedes: fct_halo-duration-v1
+    sourceIds: [src_halo-faq, src_halo-ground]
+
+  - id: fct_halo-weightless
+    factType: WEIGHTLESSNESS_DURATION
+    value: { kind: text, text: 无失重体验 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_halo-faq]
+
+  - id: fct_halo-training
+    factType: TRAINING_DURATION
+    value: { kind: text, text: 无需系统训练，仅在发射基地进行简短培训 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_halo-faq]
+
+  - id: fct_halo-eligibility-v1
+    factType: ELIGIBILITY_REQUIREMENTS
+    value: { kind: undisclosed }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: UNKNOWN
+    confidenceLevel: LOW
+
+  - id: fct_halo-eligibility-v2
+    factType: ELIGIBILITY_REQUIREMENTS
+    value:
+      {
+        kind: text,
+        text: 年满 18 岁、健康良好、能在舱内自主活动；需填写医学问卷；无严格体重限制（个案评估）,
+      }
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    supersedes: fct_halo-eligibility-v1
+    sourceIds: [src_halo-faq]
+
+events:
+  - id: evt_halo-tf01
+    eventType: VEHICLE_TEST_COMPLETED
+    title: TF01 无人原型试飞（印度，37 km 开伞）
+    occurredAt: '2022-12'
+    recordedAt: '2026-10-19'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_halo-home]
+  - id: evt_halo-tf02-05
+    eventType: VEHICLE_TEST_COMPLETED
+    title: TF02–TF05 直升机投放测试（莫哈韦）
+    occurredAt: '2023'
+    recordedAt: '2026-10-19'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_halo-home]
+  - id: evt_halo-tf06
+    eventType: OTHER
+    title: TF06 沙特发射中止（吊车未能锁定）
+    occurredAt: '2024'
+    recordedAt: '2026-10-19'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_halo-home]
+
+assessments:
+  - kind: RISK
+    text: 不是真正意义的太空（约 35 km），也没有失重
+    asOf: '2026-09-16'
+  - kind: RISK
+    text: 商业首飞目标由 2026 年变为 2029 年；首次载人测试目标为 2027 年底
+    asOf: '2026-10-19'
+    sourceIds: [src_halo-faq, src_halo-home]
+  - kind: INFO_GAP
+    text: 有媒体标题称 2025 年 10 月完成首次成功试飞，与官网试飞列表不符，未核实
+    asOf: '2026-10-19'

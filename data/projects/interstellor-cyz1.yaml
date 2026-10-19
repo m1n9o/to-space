@@ -1,0 +1,207 @@
+id: prj_interstellor-cyz1
+slug: interstellor-cyz1
+name: CYZ1 亚轨道载人飞船
+operatorName: 穿越者 interstellOr
+countryOrRegion: 中国
+description: 可重复使用的亚轨道载人飞船，最多载 7 人。2026 年定为地面试验验证年，目前只展示了全尺寸试验舱并完成着陆缓冲试验，尚无飞行试验。已开展预售。
+missionType: SUBORBITAL
+participationPathways: [PURCHASE]
+experienceDescription: 公司目标：全程 20–30 分钟，舱容 25 m³，配 1.2 m × 1 m 舷窗与推进式逃逸系统。
+targetCustomerSegments: [INDIVIDUAL, HIGH_NET_WORTH_INDIVIDUAL]
+developmentStage: DEVELOPMENT
+commercialAvailability: PRE_SALE
+classificationVerifiedAt: '2026-10-19'
+classificationSourceIds: [src_interstellor-home, src_cls-2267177]
+officialWebsiteUrl: https://www.interstellor.com/
+officialBookingUrl: https://www.interstellor.com/6
+firstPublishedAt: '2026-09-16'
+
+facts:
+  - id: fct_isr-price-presale
+    factType: PUBLIC_PRICE
+    value:
+      {
+        kind: money,
+        amount: '3000000',
+        currency: CNY,
+        priceKind: PRE_SALE_PRICE,
+      }
+    label: 总票价
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: REPORTED_UNCONFIRMED
+    confidenceLevel: MEDIUM
+    sourceIds: [src_cls-2267177, src_cls-2266549]
+
+  - id: fct_isr-price-reported
+    factType: PUBLIC_PRICE
+    value:
+      {
+        kind: money,
+        amount: '3000000',
+        currency: CNY,
+        priceKind: MEDIA_REPORTED,
+      }
+    label: 总票价（仅见媒体报道，官网未公布）
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: REPORTED_UNCONFIRMED
+    confidenceLevel: MEDIUM
+    supersedes: fct_isr-price-presale
+    sourceIds: [src_cls-2267177, src_cls-2266549]
+    notes: 官网预订页没有价格；两篇报道来自同一场发布活动，只算一份证据。因此由"官方预售价"更正为"媒体报道价"。
+
+  - id: fct_isr-deposit
+    factType: DEPOSIT_AMOUNT
+    value:
+      {
+        kind: money,
+        amount: '300000',
+        currency: CNY,
+        priceKind: MEDIA_REPORTED,
+      }
+    label: 预订费为票价的 10%，可锁定飞行次序
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: REPORTED_UNCONFIRMED
+    confidenceLevel: MEDIUM
+    sourceIds: [src_cls-2267177]
+
+  - id: fct_isr-sales
+    factType: TICKET_SALES_STATUS
+    value: { kind: availability, status: PRE_SALE }
+    label: 官网有"预定船票"意向报名表；媒体称已预售 20 余张
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: CORROBORATED
+    confidenceLevel: MEDIUM
+    sourceIds: [src_interstellor-home, src_cls-2267177]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: CORROBORATED
+        basis: 官网报名表仍开放；未见销售状态变化
+        notes: 2026-10 有推广稿称"已签约十余位付费游客"，与"20 余张"不一致；推广稿可信度较低。
+
+  - id: fct_isr-target
+    factType: TARGET_FLIGHT_DATE
+    value: { kind: date, date: '2028' }
+    label: 官网：争取 2028 年前后实现亚轨道首飞
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: LOW
+    sourceIds: [src_interstellor-home, src_cls-2266549]
+    notes: 媒体表述为"2028 年载人首飞"，官网只说"亚轨道首飞……前后"，两者口径不同。
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: COMPANY_TARGET
+        basis: 官网表述未变
+
+  - id: fct_isr-duration
+    factType: FLIGHT_DURATION
+    value: { kind: text, text: 20–30 分钟 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: LOW
+    sourceIds: [src_interstellor-home]
+
+  - id: fct_isr-altitude
+    factType: ALTITUDE
+    value: { kind: quantity, amount: 100, unit: KM, qualifier: APPROX }
+    label: 目标高度，仅见媒体报道
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: REPORTED_UNCONFIRMED
+    confidenceLevel: LOW
+    sourceIds: [src_cls-2267177]
+
+  - id: fct_isr-weightless-v1
+    factType: WEIGHTLESSNESS_DURATION
+    value: { kind: text, text: 5–10 分钟 }
+    label: 目标值
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: REPORTED_UNCONFIRMED
+    confidenceLevel: LOW
+    sourceIds: [src_cls-2267177]
+
+  - id: fct_isr-weightless-v2
+    factType: WEIGHTLESSNESS_DURATION
+    value: { kind: text, text: 3–10 分钟（两篇报道数字不一致） }
+    label: 目标值
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: DISPUTED
+    confidenceLevel: LOW
+    supersedes: fct_isr-weightless-v1
+    sourceIds: [src_cls-2267177, src_cls-2266549]
+    notes: 一篇称 5–10 分钟，另一篇称 3–6 分钟；官网未公布。
+
+  - id: fct_isr-training-v1
+    factType: TRAINING_DURATION
+    value: { kind: undisclosed, note: 飞船仍在工程研制阶段 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: UNKNOWN
+    confidenceLevel: LOW
+
+  - id: fct_isr-training-v2
+    factType: TRAINING_DURATION
+    value:
+      {
+        kind: text,
+        text: 须完成航天标准的飞前训练、模拟舱训练与专项体检，由医生进行健康评级；未公布时长,
+      }
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    supersedes: fct_isr-training-v1
+    sourceIds: [src_interstellor-club]
+
+events:
+  - id: evt_isr-first-tourist
+    eventType: TICKET_SALES_OPENED
+    title: 首位太空游客签约
+    announcedAt: '2023-10-10'
+    recordedAt: '2026-10-19'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_interstellor-home]
+  - id: evt_isr-capsule-2026-01
+    eventType: OTHER
+    title: 全尺寸试验舱亮相，公布票价与预订规则
+    occurredAt: '2026-01-22'
+    recordedAt: '2026-09-16'
+    verificationStatus: REPORTED_UNCONFIRMED
+    sourceIds: [src_cls-2266549]
+  - id: evt_isr-landing-test
+    eventType: VEHICLE_TEST_COMPLETED
+    title: 着陆缓冲（"云感着陆"）地面试验
+    summary: 公司称冲击由 20 g 降至 5 g 以下；目前唯一的实物试验为 5 吨舱体 3 米跌落。
+    occurredAt: '2026-01'
+    announcedAt: '2026-01-27'
+    recordedAt: '2026-10-19'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_interstellor-home]
+  - id: evt_isr-pre-a
+    eventType: FUNDING_OR_OWNERSHIP_CHANGE
+    title: 完成约 1 亿元 Pre-A 轮融资
+    announcedAt: '2026-05-28'
+    recordedAt: '2026-10-19'
+    verificationStatus: REPORTED_UNCONFIRMED
+    sourceIds: [src_sina-interstellor-2026-05-29]
+
+assessments:
+  - kind: RISK
+    text: 售票进度领先于飞行验证：目前只完成地面试验，尚无任何飞行试验
+    asOf: '2026-10-19'
+    sourceIds: [src_cls-2267177, src_sina-interstellor-2026-05-29]
+  - kind: INFO_GAP
+    text: 票价与预订费未在官网公布，仅见媒体报道；退款条款、年龄与医学门槛未公开
+    asOf: '2026-10-19'
+  - kind: ACTION_ADVICE
+    text: 支付预订费前取得书面合同，确认退款与飞行次序条款
+    asOf: '2026-10-19'

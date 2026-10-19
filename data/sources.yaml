@@ -1,0 +1,880 @@
+# 来源登记表。所有事实、事件引用这里的 id。
+# - accessedAt：首次访问日期；linkCheckedAt：最近一次检查链接可访问性的日期
+# - 同一 URL 只登记一次；转载请填写 republishedFromId，不计为独立证据
+# - excerptOrEvidence 只保存简短摘要或定位信息，不复制全文
+
+sources:
+  # ---------------- 深蓝航天 ----------------
+  - id: src_cls-1836569
+    url: https://www.cls.cn/detail/1836569
+    title: 深蓝航天开售亚轨道载人飞行船票
+    publisher: 科创板日报
+    sourceType: REPUTABLE_MEDIA
+    publishedAt: '2024-10-24'
+    accessedAt: '2026-09-16'
+    language: zh-CN
+    excerptOrEvidence: 全款定价 150 万元，直播间到手价 100 万元；仅出售前 2 名船票，随后显示无货；全程约 12 分钟。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_nbd-3605077
+    url: https://www.nbd.com.cn/articles/2024-10-24/3605077.html
+    title: 深蓝航天太空旅游船票预售
+    publisher: 每日经济新闻
+    sourceType: REPUTABLE_MEDIA
+    publishedAt: '2024-10-24'
+    accessedAt: '2026-09-16'
+    language: zh-CN
+    excerptOrEvidence: 订金 5 万元，7 天内可无理由退款，超过 7 天订金不予退还；提前 6 个月可免费改期一次；飞行前 1 个月参加安全培训。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_sciencenet-532478
+    url: https://news.sciencenet.cn/htmlnews/2024/10/532478.shtm
+    title: 深蓝航天亚轨道旅游船票预售
+    publisher: 中国科学报（科学网）
+    sourceType: REPUTABLE_MEDIA
+    publishedAt: '2024-10-24'
+    accessedAt: '2026-09-16'
+    language: zh-CN
+    excerptOrEvidence: 建议年龄 18 至 60 岁；须在飞行前 1 个月参加安全培训。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_thepaper-29148643
+    url: https://m.thepaper.cn/newsDetail_forward_29148643
+    title: 深蓝航天太空旅游船票（澎湃新闻）
+    publisher: 澎湃新闻
+    sourceType: REPUTABLE_MEDIA
+    accessedAt: '2026-09-16'
+    language: zh-CN
+    linkStatus: BROKEN
+    linkCheckedAt: '2026-10-19'
+    notes: 2026-10-19 访问返回 HTTP 404。
+  - id: src_reuters-deep-blue-2024
+    url: https://www.reuters.com/technology/space/chinese-startup-sell-tickets-2027-space-tourism-flights-2024-10-24/
+    title: Chinese startup to sell tickets for 2027 space tourism flights
+    publisher: Reuters
+    sourceType: REPUTABLE_MEDIA
+    publishedAt: '2024-10-24'
+    accessedAt: '2026-09-16'
+    language: en
+    linkStatus: UNCHECKED
+    notes: 2026-10-19 自动访问被拒绝（401），未确认是否失效。
+  - id: src_sina-dba-2026-09-27
+    url: https://finance.sina.com.cn/roll/2026-09-27/doc-initfpan3615131.shtml
+    title: 深蓝航天完成新一轮融资（无锡日报）
+    publisher: 无锡日报（新浪财经转载）
+    sourceType: REPUTABLE_MEDIA
+    publishedAt: '2026-09-27'
+    accessedAt: '2026-10-19'
+    language: zh-CN
+    excerptOrEvidence: 约 20 亿元 B6/B7 轮融资，用于星云一号/二号与雷霆发动机；星云一号"稳步推进首发相关任务"；星云二号计划 2027 年底首飞。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_qq-nebula2-tank
+    url: https://news.qq.com/rain/a/20261014A0AEMM00
+    title: 星云二号 5 米不锈钢共底贮箱下线
+    publisher: 你好太空（腾讯新闻）
+    sourceType: OTHER
+    publishedAt: '2026-10-14'
+    accessedAt: '2026-10-19'
+    language: zh-CN
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_dbaspace-home
+    url: https://www.dbaspace.com/
+    title: 深蓝航天官网
+    publisher: 深蓝航天
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-10-19'
+    language: zh-CN
+    excerptOrEvidence: 官网内容陈旧（新闻为 2018 年占位内容），无太空旅游或船票信息。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+
+  # ---------------- 中科宇航 ----------------
+  - id: src_cas-list-43
+    url: https://www.cas-space.com/list/43.html
+    title: 力鸿二号产品参数
+    publisher: 中科宇航
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: zh-CN
+    excerptOrEvidence: 高度不低于 100 km；微重力时间不少于 180 秒；可载 7 人或 3 吨货物；可重复使用不少于 30 次。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_cas-article-177
+    url: https://www.cas-space.com/article/177.html
+    title: 力鸿一号亚轨道飞行试验成功
+    publisher: 中科宇航
+    sourceType: OFFICIAL_ANNOUNCEMENT
+    publishedAt: '2026-01-12'
+    accessedAt: '2026-09-16'
+    language: zh-CN
+    excerptOrEvidence: 飞行高度约 120 千米，穿越卡门线；返回舱伞降回收。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_cas-article-382
+    url: https://www.cas-space.com/article/382.html
+    title: 可回收推进系统研发进展
+    publisher: 中科宇航
+    sourceType: OFFICIAL_ANNOUNCEMENT
+    publishedAt: '2026-01-20'
+    accessedAt: '2026-09-16'
+    language: zh-CN
+    excerptOrEvidence: 计划 2026 年开展 100 km 级回收演示。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_cas-article-607
+    url: https://www.cas-space.com/article/607.html
+    title: 力鸿二号将于 2027 年一季度首飞并搭载太空制药载荷
+    publisher: 中科宇航
+    sourceType: OFFICIAL_ANNOUNCEMENT
+    publishedAt: '2026-09-28'
+    accessedAt: '2026-10-19'
+    language: zh-CN
+    excerptOrEvidence: 力鸿二号可重复使用运载器将于 2027 年一季度首飞（载货版）。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_sina-cas-2026-07-06
+    url: https://finance.sina.com.cn/wm/2026-07-06/doc-inifwwms8534037.shtml
+    title: 中科宇航董事长杨毅强谈太空旅游
+    publisher: 广东省工商联（新浪财经转载）
+    sourceType: REPUTABLE_MEDIA
+    publishedAt: '2026-07-06'
+    accessedAt: '2026-09-16'
+    language: zh-CN
+    excerptOrEvidence: 前期票价不会超过 200 万元人民币，之后有望降至约 70 万元；身体条件要求比去拉萨低。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_eastmoney-cas-2026-09-10
+    url: https://finance.eastmoney.com/a/202609103870379395.html
+    title: 中科宇航董事长：2028 年底有望迎来普通人亚轨道旅行尝试
+    publisher: 中国经营报（东方财富转载）
+    sourceType: REPUTABLE_MEDIA
+    publishedAt: '2026-09-10'
+    accessedAt: '2026-10-19'
+    language: zh-CN
+    excerptOrEvidence: 乐观估计 2028 年年底有望迎来普通人亚轨道太空旅行的落地尝试；前提是连续十余次成功飞行及监管审批。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_eastmoney-cas-2026-09-06
+    url: https://finance.eastmoney.com/a/202609063866137149.html
+    title: 中博会商业航天展区报道
+    publisher: 广州日报（东方财富转载）
+    sourceType: REPUTABLE_MEDIA
+    publishedAt: '2026-09-06'
+    accessedAt: '2026-10-19'
+    language: zh-CN
+    excerptOrEvidence: 中科宇航展台工作人员称国内太空旅游价格有望降至约 100 万元，未给出时间与机型。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_stdaily-2024-05-15
+    url: https://www.stdaily.com/web/gdxw/2024-05/15/content_1960467.html
+    title: 中科宇航亚轨道旅游早期方案
+    publisher: 科技日报
+    sourceType: REPUTABLE_MEDIA
+    publishedAt: '2024-05-15'
+    accessedAt: '2026-09-16'
+    language: zh-CN
+    excerptOrEvidence: 早期方案：全程约 30 分钟，含短期飞前培训；称已开放预订，票价 200–300 万元（后未见官方售票）。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+
+  # ---------------- 穿越者 ----------------
+  - id: src_interstellor-home
+    url: https://www.interstellor.com/
+    title: 穿越者官网
+    publisher: 穿越者 interstellOr
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: zh-CN
+    excerptOrEvidence: 争取 2028 年前后实现亚轨道首飞；最多 7 人，全程 20–30 分钟；首位太空游客 2023-10-10 签约；2026-01-27 发布着陆缓冲试验新闻。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_interstellor-en-products
+    url: https://en.interstellor.com/products-and-services
+    title: interstellOr products and services
+    publisher: 穿越者 interstellOr
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_interstellor-club
+    url: https://www.interstellor.com/4
+    title: 穿越者太空游客俱乐部
+    publisher: 穿越者 interstellOr
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-10-19'
+    language: zh-CN
+    excerptOrEvidence: 飞行前须完成航天标准训练、模拟舱训练与专项体检及医生健康评级；预售合同持有人自动成为俱乐部会员。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_cls-2266549
+    url: https://www.cls.cn/detail/2266549
+    title: 穿越者全尺寸试验舱亮相
+    publisher: 科创板日报
+    sourceType: REPUTABLE_MEDIA
+    publishedAt: '2026-01-22'
+    accessedAt: '2026-09-16'
+    language: zh-CN
+    excerptOrEvidence: 单次太空旅游票价 300 万元；预计 2028 年实现载人首飞；失重 3–6 分钟。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_cls-2267177
+    url: https://www.cls.cn/detail/2267177
+    title: 穿越者已预售 20 余张船票
+    publisher: 科创板日报
+    sourceType: REPUTABLE_MEDIA
+    publishedAt: '2026-01-23'
+    accessedAt: '2026-09-16'
+    language: zh-CN
+    excerptOrEvidence: 总票价 300 万元，预订费 10% 可锁定飞行次序；已预售 20 余张；失重 5–10 分钟；目前仅完成 3 米跌落试验。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+    notes: 与 src_cls-2266549 报道同一场发布活动，不应视为两份独立证据。
+    republishedFromId: src_cls-2266549
+  - id: src_sina-interstellor-2026-05-29
+    url: https://finance.sina.com.cn/wm/2026-05-29/doc-inhzqimi9489701.shtml
+    title: 穿越者完成 Pre-A 轮融资
+    publisher: 界面新闻（新浪财经转载）
+    sourceType: REPUTABLE_MEDIA
+    publishedAt: '2026-05-29'
+    accessedAt: '2026-10-19'
+    language: zh-CN
+    excerptOrEvidence: 约 1 亿元 Pre-A 轮；2026 年为地面试验验证年，路径为从低空到高空、从无人到有人。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+
+  # ---------------- Axiom Space ----------------
+  - id: src_nasa-pam
+    url: https://www.nasa.gov/humans-in-space/private-astronaut-missions/
+    title: Private Astronaut Missions
+    publisher: NASA
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: 列出 Ax-1（2022-04）、Ax-2（2023-05）、Ax-3（2024-01）、Ax-4（2025-06）已完成，Ax-5 规划中；页面更新于 2026-08-31。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_nasa-ax5
+    url: https://www.nasa.gov/news-release/nasa-selects-axiom-space-for-fifth-private-mission-to-space-station/
+    title: NASA Selects Axiom Space for Fifth Private Mission to Space Station
+    publisher: NASA
+    sourceType: OFFICIAL_ANNOUNCEMENT
+    publishedAt: '2026-01-30'
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: Ax-5 不早于 2027 年 1 月从肯尼迪航天中心发射，最多停靠 14 天；乘员由 Axiom 提名，须经 NASA 与国际伙伴审批。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_axiom-ax1
+    url: https://www.axiomspace.com/missions/ax1
+    title: Ax-1 Mission
+    publisher: Axiom Space
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: Ax-1 乘员完成 700 至 1,000 小时训练；任务历时 17 天。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_axiom-ax1-crew
+    url: https://www.axiomspace.com/release/ax1-crew
+    title: Ax-1 crew release
+    publisher: Axiom Space
+    sourceType: OFFICIAL_ANNOUNCEMENT
+    accessedAt: '2026-09-16'
+    language: en
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_space-com-ax3
+    url: https://www.space.com/spacex-axiom-space-ax-3-international-space-station-launch-date
+    title: SpaceX to launch Axiom Space's Ax-3 mission
+    publisher: Space.com
+    sourceType: REPUTABLE_MEDIA
+    publishedAt: '2023-12-13'
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: Axiom 不公开单座价格，估算 Ax-1 约为每人 5,500 万美元。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_axiom-human-spaceflight
+    url: https://www.axiomspace.com/human-spaceflight
+    title: Axiom Human Spaceflight
+    publisher: Axiom Space
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: 无价格、无预订或询价表单；页面按钮链接为空（#）。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_axiom-missions
+    url: https://www.axiomspace.com/missions
+    title: Axiom Missions
+    publisher: Axiom Space
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: Ax-4 于 2025-06-25 发射、2025-07-15 溅落；Ax-5 标注为 NET January 2027。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_startmag-ax5
+    url: https://en.startmag.it/spazio-e-difesa/an-italian-astronaut-on-ax-5-what-the-ceo-of-axiom-space-said/
+    title: An Italian astronaut on Ax-5? What the CEO of Axiom Space said
+    publisher: StartMag
+    sourceType: REPUTABLE_MEDIA
+    publishedAt: '2026-09-25'
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: CEO 称 Ax-5 目标 2027 年，意大利宇航员参与是"具体可能"，将在未来几周公布。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+
+  # ---------------- SpaceX ----------------
+  - id: src_spacex-hsf-new
+    url: https://new.spacex.com/humanspaceflight
+    title: SpaceX Human Spaceflight（旧地址）
+    publisher: SpaceX
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    linkStatus: BROKEN
+    linkCheckedAt: '2026-10-19'
+    notes: 2026-10-19 访问返回 HTTP 522。
+  - id: src_spacex-moon-new
+    url: https://new.spacex.com/humanspaceflight/moon
+    title: SpaceX Moon inquiry（旧地址）
+    publisher: SpaceX
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    linkStatus: BROKEN
+    linkCheckedAt: '2026-10-19'
+    notes: 2026-10-19 访问返回 HTTP 522。
+  - id: src_spacex-hsf
+    url: https://www.spacex.com/humanspaceflight
+    title: SpaceX Human Spaceflight
+    publisher: SpaceX
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-10-19'
+    language: en
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+    notes: 页面可访问，但为纯 JavaScript 渲染，自动工具无法读取内容。
+  - id: src_reuters-fram2
+    url: https://www.reuters.com/science/private-spacex-crew-set-launch-novel-polar-orbit-around-earth-2025-03-31/
+    title: Private SpaceX crew set to launch on novel polar orbit around Earth
+    publisher: Reuters
+    sourceType: REPUTABLE_MEDIA
+    publishedAt: '2025-03-31'
+    accessedAt: '2026-09-16'
+    language: en
+    linkStatus: UNCHECKED
+    notes: 2026-10-19 自动访问被拒绝（401），未确认是否失效。
+  - id: src_reuters-polaris
+    url: https://www.reuters.com/technology/space/spacex-polaris-crew-poised-attempt-first-private-spacewalk-2024-09-11/
+    title: SpaceX Polaris crew poised to attempt first private spacewalk
+    publisher: Reuters
+    sourceType: REPUTABLE_MEDIA
+    publishedAt: '2024-09-11'
+    accessedAt: '2026-09-16'
+    language: en
+    linkStatus: UNCHECKED
+    notes: 2026-10-19 自动访问被拒绝（401），未确认是否失效。
+  - id: src_wiki-fram2
+    url: https://en.wikipedia.org/wiki/Fram2
+    title: Fram2
+    publisher: Wikipedia
+    sourceType: OTHER
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: 2025-04-01 发射，2025-04-04 溅落；极地轨道，约 3.6 天。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+
+  # ---------------- Vast ----------------
+  - id: src_vast-haven-1
+    url: https://www.vastspace.com/haven-1
+    title: Haven-1
+    publisher: Vast
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: 425 km、51.6° 轨道；4 名乘员；两周任务；2027 年由 Falcon 9 发射。页面仍保留"2026 年 5 月发射"的旧进度条目。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_vast-create
+    url: https://www.vastspace.com/create-your-mission
+    title: Create Your Mission
+    publisher: Vast
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: Launching 2027；训练阶段仅列出"Stage 1：SpaceX training"。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_vast-pam
+    url: https://www.vastspace.com/private-astronaut-mission
+    title: Private Astronaut Mission
+    publisher: Vast
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: 通过 fly@vastspace.com 询价（Inquire Now）；无在线预订，无价格。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_nasa-pam6
+    url: https://www.nasa.gov/news-release/nasa-selects-vast-for-sixth-private-mission-to-space-station/
+    title: NASA Selects Vast for Sixth Private Mission to Space Station
+    publisher: NASA
+    sourceType: OFFICIAL_ANNOUNCEMENT
+    publishedAt: '2026-02-12'
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: 不早于 2027 年夏季发射，最多停靠 14 天；乘员须经 NASA 与国际伙伴审批。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_vast-greece
+    url: https://www.vastspace.com/updates/greece-vast-esa-first-greek-astronaut-private-mission-nasa
+    title: Greece, Vast and ESA agree on first Greek astronaut mission
+    publisher: Vast
+    sourceType: OFFICIAL_ANNOUNCEMENT
+    publishedAt: '2026-09-09'
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: Vast-PAM-1 乘员：指令长 Thomas Pesquet、驾驶员 Aleš Svoboda、任务专家 Adrianos Golemis（待审批），第四名乘员待公布。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_vast-france
+    url: https://www.vastspace.com/updates/france-vast-two-mission-agreement-iss-haven-1
+    title: France and Vast sign two-mission agreement
+    publisher: Vast
+    sourceType: OFFICIAL_ANNOUNCEMENT
+    publishedAt: '2026-06-01'
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: Arnaud Prost 将作为飞行测试工程师参加 Haven-1 首次载人任务；PAM 不早于 2027 年夏季。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_vast-esa-mou
+    url: https://www.vastspace.com/updates/esa-vast-mou-post-iss-cooperation
+    title: ESA and Vast sign MoU on post-ISS cooperation
+    publisher: Vast
+    sourceType: OFFICIAL_ANNOUNCEMENT
+    publishedAt: '2026-10-06'
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: Haven-1 预计 2027 年发射，载人运营仍以 2027 年为目标。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+
+  # ---------------- Voyager ----------------
+  - id: src_nasa-pam7
+    url: https://www.nasa.gov/news-release/nasa-selects-voyager-for-seventh-private-mission-to-space-station/
+    title: NASA Selects Voyager for Seventh Private Mission to Space Station
+    publisher: NASA
+    sourceType: OFFICIAL_ANNOUNCEMENT
+    publishedAt: '2026-04-15'
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: VOYG-1 不早于 2028 年从佛罗里达发射，最多停靠 14 天，4 名乘员；乘员由 Voyager 提名并经 NASA 与国际伙伴审批。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_voyager-contact
+    url: https://voyagertechnologies.com/contact/
+    title: Voyager Technologies contact
+    publisher: Voyager Technologies
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: 联系表单无宇航员/载人航天选项；官网无 VOYG-1 页面。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_businesswire-voyager-notes
+    url: https://www.businesswire.com/news/home/20260922567936/en/
+    title: Voyager Technologies prices convertible senior notes offering
+    publisher: Business Wire
+    sourceType: OFFICIAL_ANNOUNCEMENT
+    publishedAt: '2026-09-22'
+    accessedAt: '2026-10-19'
+    language: en
+    linkStatus: UNCHECKED
+    notes: 仅从新闻聚合结果看到标题，未打开原文。
+
+  # ---------------- SERA ----------------
+  - id: src_sera-home
+    url: https://www.sera.space/
+    title: SERA 官网
+    publisher: SERA
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: 首页标题"Blue Origin Pauses New Shepard Flights"，称 UNITY 发射暂停。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_sera-news-pause
+    url: https://www.sera.space/news/articles/blue-origin-pauses-new-shepard
+    title: Blue Origin Pauses New Shepard Flights
+    publisher: SERA
+    sourceType: OFFICIAL_ANNOUNCEMENT
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: UNITY 任务因此暂停；SERA 正寻找替代的近期发射方案；应用注册超过 14 万人。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+    notes: 页面未标注发布日期。
+  - id: src_sera-registration
+    url: https://www.sera.space/registration
+    title: SERA Registration
+    publisher: SERA
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: 预登记以接收后续任务信息；路线图各阶段均为 TBD；页面仍称"即将到来的 New Shepard 发射"。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_sera-astronauts
+    url: https://www.sera.space/astronauts
+    title: SERA astronaut selection
+    publisher: SERA
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: 飞行时年满 18 岁；须满足 Blue Origin 身高、体重、体能与国籍要求；基本英语；KYC；获选者在 Blue Origin 西德州基地训练 3 天。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_sera-pr-blueorigin
+    url: https://sera.space/pressrelease/articles/blueorigin
+    title: SERA partners with Blue Origin
+    publisher: SERA
+    sourceType: OFFICIAL_ANNOUNCEMENT
+    publishedAt: '2024-04-22'
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: Victor Hespanha 于 2022 年搭乘 NS-21 飞行，为社区随机选出的首位宇航员。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_sera-pr-seats
+    url: https://www.sera.space/pressrelease/articles/sera-announces-underrepresented-seats-blue-origin
+    title: SERA announces seats for underrepresented nations
+    publisher: SERA
+    sourceType: OFFICIAL_ANNOUNCEMENT
+    publishedAt: '2024-07-01'
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: SERA 购买了 6 个 New Shepard 席位，其中 5 席面向宇航员稀少国家公民。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+
+  # ---------------- Space for Humanity ----------------
+  - id: src_sfh-home
+    url: https://spaceforhumanity.org/
+    title: Space for Humanity
+    publisher: Space for Humanity
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: 首页仍显示"申请参加 Humanity-1"，与申请页"已关闭"不一致。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_sfh-apply
+    url: https://spaceforhumanity.org/apply
+    title: Citizen Astronaut application
+    publisher: Space for Humanity
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: 申请已于 2022-11-15 关闭；目前没有公开的飞行日期；入选者的训练、票价、差旅与住宿全部赞助；需英语能力。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_sfh-crew-cas
+    url: https://spaceforhumanity.org/crew/cas
+    title: Citizen Astronauts
+    publisher: Space for Humanity
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: CA-1 Katya Echazarreta（NS-21，2022-06-04）；CA-2 Sara Sabry（NS-22，2022-08-04）。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_sfh-ambassadors
+    url: https://spaceforhumanity.org/crew/ambassadors
+    title: Ambassadors
+    publisher: Space for Humanity
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: Ed Dwight 搭乘 NS-25 飞行"部分得益于 Space for Humanity 的赞助"；页面未给出日期。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+
+  # ---------------- Space Adventures ----------------
+  - id: src_sa-home
+    url: https://spaceadventures.com/
+    title: Space Adventures
+    publisher: Space Adventures
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: 页脚 © 2022；最新新闻稿为 2021-12-20。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_sa-contact
+    url: https://spaceadventures.com/contact/
+    title: Space Adventures contact
+    publisher: Space Adventures
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: 询价表单（环月、太空行走、空间站、训练等项目）；无预订系统或候补机制说明。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_sa-iss
+    url: https://spaceadventures.com/experiences/space-station/
+    title: Space Station experiences
+    publisher: Space Adventures
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: 列出 Tito（2001）至前泽友作（2021）等 9 次私人航天飞行；价格"取决于多种因素"。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_sa-mz
+    url: https://spaceadventures.com/mzmission/
+    title: MZ mission
+    publisher: Space Adventures
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: 前泽友作与平野阳三于 2021-12-08 搭乘联盟 MS-20 出发，在 ISS 停留 12 天；在加加林宇航员训练中心训练。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_sa-guide
+    url: https://spaceadventures.com/experiences/guide-to-space-station/
+    title: Guide to space station
+    publisher: Space Adventures
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_sa-iss2025
+    url: https://spaceadventures.com/mission_to_iss_2025/
+    title: Mission to ISS 2025
+    publisher: Space Adventures
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: 目标 2025 年年中搭乘 Dragon 前往 ISS；在美国训练数周（页面时间戳 2024-01-15）。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_sa-dragon
+    url: https://spaceadventures.com/private-mission-available-on-the-spacex-dragon/
+    title: Private mission available on the SpaceX Dragon
+    publisher: Space Adventures
+    sourceType: OFFICIAL_ANNOUNCEMENT
+    publishedAt: '2020-03-05'
+    accessedAt: '2026-09-16'
+    language: en
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+
+  # ---------------- Blue Origin ----------------
+  - id: src_bo-experience
+    url: https://www.blueorigin.com/new-shepard/experience
+    title: New Shepard Experience
+    publisher: Blue Origin
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: 收取 $150,000 押金以开始订购流程，押金全额可退；表单不保证席位；须年满 18 岁；T+3:30 越过卡门线，T+11 分钟着陆。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+    notes: 官网对自动访问返回 429，2026-10-19 通过阅读代理获取官方页面内容。
+  - id: src_bo-pause
+    url: https://www.blueorigin.com/news/new-shepard-to-pause-flights
+    title: New Shepard to Pause Flights for No Less Than Two Years
+    publisher: Blue Origin
+    sourceType: OFFICIAL_ANNOUNCEMENT
+    publishedAt: '2026-01-30'
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: New Shepard 暂停飞行不少于两年；累计飞行 38 次，98 人次越过卡门线；有多年的客户积压订单。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+    notes: 旧数据引用的 zh-HK 地址（/zh-HK/news/new-shepard-to-pause-flights）提供同一篇英文文章。
+  - id: src_bo-new-shepard
+    url: https://www.blueorigin.com/new-shepard
+    title: New Shepard overview
+    publisher: Blue Origin
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    linkStatus: UNCHECKED
+    notes: 2026-10-19 访问返回 429，未能复核。
+  - id: src_bo-fly
+    url: https://www.blueorigin.com/en-US/new-shepard/fly
+    title: Fly on New Shepard
+    publisher: Blue Origin
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: 两天训练：任务剖面、安全系统、零重力规程与任务模拟。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_bo-ns34
+    url: https://www.blueorigin.com/missions/ns-34
+    title: NS-34 mission
+    publisher: Blue Origin
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: 第 14 次载人飞行，2025 年 8 月 3 日。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_bo-ns38
+    url: https://www.blueorigin.com/missions/ns-38
+    title: NS-38 mission
+    publisher: Blue Origin
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: 2026-01-22 载人飞行，为 2026 年首飞。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+
+  # ---------------- Virgin Galactic ----------------
+  - id: src_vg-q2-2026
+    url: https://www.virgingalactic.com/news/virgin-galactic-announces-second-quarter-2026-financial-results-and-provides-business-update
+    title: Virgin Galactic Q2 2026 financial results and business update
+    publisher: Virgin Galactic
+    sourceType: OFFICIAL_ANNOUNCEMENT
+    publishedAt: '2026-08-12'
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: $750,000 一批席位超额认购、提前售罄，今秋以更高价格开售新一批；首次商业飞行由 2026 年第四季度推迟至 2027 年 2 月；2026 年 10 月进行挂飞测试。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_vg-brochure
+    url: https://www.virgingalactic.com/virgin-galactic-brochure
+    title: Virgin Galactic spaceflight brochure
+    publisher: Virgin Galactic
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: 远地点近 30 万英尺；数分钟失重；飞前详细医学问卷与现场体检。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_faa-faq
+    url: https://www.faa.gov/space/additional_information/faq
+    title: Commercial Space Transportation FAQ
+    publisher: FAA
+    sourceType: REGULATORY_DOCUMENT
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: 美国法律未对太空边界作出定义。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_vg-home
+    url: https://www.virgingalactic.com/
+    title: Virgin Galactic
+    publisher: Virgin Galactic
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: 横幅"Spaceflight Expeditions — Limited Bookings Now Available"，附注册入口；页面未显示价格。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_latte-vg-850k
+    url: https://latteluxurynews.com/2026/10/02/virgin-galactic-increases-seat-prices-by-200k/
+    title: Virgin Galactic increases seat prices by $200K
+    publisher: LATTE Luxury News
+    sourceType: OTHER
+    publishedAt: '2026-10-02'
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: 称新一批票价 $850,000，申请费 $1,000 可抵扣且退出可退；称此前价格为 $650,000（与官方 $750,000 不符）。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_vg-afrl
+    url: https://www.virgingalactic.com/news/virgin-galactic-and-the-air-force-research-laboratory-enter-agreement-to-advance-space-weather-science
+    title: Virgin Galactic and AFRL enter agreement to advance space weather science
+    publisher: Virgin Galactic
+    sourceType: OFFICIAL_ANNOUNCEMENT
+    publishedAt: '2026-10-14'
+    accessedAt: '2026-10-19'
+    language: en
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+
+  # ---------------- Zephalto ----------------
+  - id: src_zephalto-home
+    url: https://www.zephalto.com/
+    title: Zephalto
+    publisher: Zephalto
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: 路线图列出"首次载人平流层飞行"（2023 与 2024 两处表述不一）与"2027 年首批面向公众的飞行"；2026-04-16 发布 Altaïr 舱体。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_zephalto-faq
+    url: https://www.zephalto.com/faq
+    title: Zephalto FAQ
+    publisher: Zephalto
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: 每位乘客 €180,000（含税及取消保险，自 2025 年 11 月起适用）；25 km，约 6 小时；能乘坐飞机即可参加。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_zephalto-cgv
+    url: https://www.zephalto.com/legals/cgv
+    title: Zephalto 销售条款（2026 年 6 月版）
+    publisher: Zephalto
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: fr
+    excerptOrEvidence: 首批飞行至 2027 年秋已售罄，下一批自 2027 年 11 月起；注册预付 €10,000，30 天内补足至 €36,000；第 7–10 条规定撤回、取消与延期退款。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_zephalto-article
+    url: https://www.zephalto.com/article-page/how-to-get-to-space-when-youre-not-an-astronaut
+    title: How to get to space when you're not an astronaut
+    publisher: Zephalto
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+
+  # ---------------- HALO Space ----------------
+  - id: src_halo-home
+    url: https://www.halospaceflight.com/
+    title: HALO Space
+    publisher: HALO Space
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-10-19'
+    language: en
+    excerptOrEvidence: TF01 2022-12 印度（37 km 开伞）；TF02–05 2023 莫哈韦直升机投放；TF06 2024 沙特发射中止；载人测试目标 2027 年底。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_halo-faq
+    url: https://www.halospaceflight.com/faq
+    title: HALO Space FAQ
+    publisher: HALO Space
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: 尚不能预订，可免订金加入候补；€150,000（$165,000）；首次商业飞行 2029 年；年满 18 岁、健康良好；4–6 小时。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'
+  - id: src_halo-ground
+    url: https://www.halospaceflight.com/ground-experience
+    title: HALO Ground / Flight Experience
+    publisher: HALO Space
+    sourceType: OFFICIAL_PRODUCT_PAGE
+    accessedAt: '2026-09-16'
+    language: en
+    excerptOrEvidence: $165,000；6 小时飞行；7 天行程价格另议。
+    linkStatus: OK
+    linkCheckedAt: '2026-10-19'

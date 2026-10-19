@@ -1,0 +1,122 @@
+id: prj_voyager-voyg-1
+slug: voyager-voyg-1
+name: VOYG-1 国际空间站私人宇航员任务
+operatorName: Voyager Technologies
+countryOrRegion: 美国
+description: NASA 第七次国际空间站私人宇航员任务的承包方，计划不早于 2028 年发射。目前没有面向个人消费者的购买渠道。
+missionType: SPACE_STATION_MISSION
+participationPathways: [PURCHASE]
+experienceDescription: 计划 4 名乘员，在国际空间站停靠最多约 14 天。
+targetCustomerSegments:
+  [GOVERNMENT_OR_NATIONAL_AGENCY, RESEARCH_INSTITUTION, CORPORATE_OR_BRAND]
+developmentStage: DEVELOPMENT
+commercialAvailability: NOT_YET_OFFERED
+classificationVerifiedAt: '2026-10-19'
+classificationSourceIds: [src_nasa-pam7, src_voyager-contact]
+officialWebsiteUrl: https://voyagertechnologies.com/
+officialContactUrl: https://voyagertechnologies.com/contact/
+firstPublishedAt: '2026-09-16'
+
+facts:
+  - id: fct_voyager-price
+    factType: PUBLIC_PRICE
+    value: { kind: undisclosed, note: 无个人票务系统 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_nasa-pam7]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 官网无 VOYG-1 页面与价格
+        sourceIds: [src_voyager-contact]
+
+  - id: fct_voyager-sales
+    factType: TICKET_SALES_STATUS
+    value: { kind: availability, status: NOT_YET_OFFERED }
+    label: 官网联系表单没有载人航天选项
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_nasa-pam7]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 联系表单选项中没有宇航员或载人航天
+        sourceIds: [src_voyager-contact]
+
+  - id: fct_voyager-target
+    factType: TARGET_FLIGHT_DATE
+    value: { kind: date, date: '2028' }
+    label: VOYG-1 不早于 2028 年从佛罗里达发射
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: MEDIUM
+    sourceIds: [src_nasa-pam7]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: COMPANY_TARGET
+        basis: 未见日程调整
+
+  - id: fct_voyager-duration-v1
+    factType: FLIGHT_DURATION
+    value: { kind: undisclosed }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: UNKNOWN
+    confidenceLevel: LOW
+
+  - id: fct_voyager-duration-v2
+    factType: FLIGHT_DURATION
+    value: { kind: quantity, amount: 14, unit: DAY, qualifier: MAX }
+    label: 停靠国际空间站最多约 14 天
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    supersedes: fct_voyager-duration-v1
+    sourceIds: [src_nasa-pam7]
+    notes: 旧版记为"未公开"，复核发现 NASA 公告已给出。
+
+  - id: fct_voyager-eligibility
+    factType: ELIGIBILITY_REQUIREMENTS
+    value:
+      {
+        kind: text,
+        text: 乘员由 Voyager 提名，须经 NASA 与国际伙伴审核，再与 NASA、伙伴及发射商共同训练,
+      }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_nasa-pam7]
+
+events:
+  - id: evt_voyager-pam7-selected
+    eventType: OTHER
+    title: NASA 选定 Voyager 执行第七次私人宇航员任务（VOYG-1）
+    announcedAt: '2026-04-15'
+    recordedAt: '2026-09-16'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_nasa-pam7]
+  - id: evt_voyager-notes
+    eventType: FUNDING_OR_OWNERSHIP_CHANGE
+    title: 发行 3.5 亿美元可转换优先票据（2032 年到期）
+    announcedAt: '2026-09-22'
+    recordedAt: '2026-10-19'
+    verificationStatus: REPORTED_UNCONFIRMED
+    sourceIds: [src_businesswire-voyager-notes]
+
+assessments:
+  - kind: JUDGMENT
+    text: 暂无个人消费者购买通道，更适合作为 2028 年之后的观察项目
+    asOf: '2026-10-19'
+  - kind: INFO_GAP
+    text: 发射服务商与乘员构成未经官方确认（维基百科称使用 Dragon，四名乘员均为 Voyager 雇员）
+    asOf: '2026-10-19'

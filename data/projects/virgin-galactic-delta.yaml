@@ -1,0 +1,223 @@
+id: prj_virgin-galactic-delta
+slug: virgin-galactic-delta
+name: Delta 级太空船亚轨道飞行
+operatorName: Virgin Galactic
+countryOrRegion: 美国
+description: 母机挂载太空船至约 45,000 英尺高空释放，火箭动力爬升后滑翔着陆。上一代 VSS Unity 已完成商业载人飞行；新一代 Delta 级太空船处于测试准备阶段。
+missionType: SUBORBITAL
+participationPathways: [PURCHASE]
+experienceDescription: 远地点近 30 万英尺（约 91 km），未越过 100 km 卡门线；数分钟失重，跑道滑翔着陆。
+targetCustomerSegments: [HIGH_NET_WORTH_INDIVIDUAL, RESEARCH_INSTITUTION]
+developmentStage: TESTING
+commercialAvailability: OPEN_FOR_PURCHASE
+classificationVerifiedAt: '2026-10-19'
+classificationSourceIds: [src_vg-q2-2026, src_vg-home]
+officialWebsiteUrl: https://www.virgingalactic.com/
+officialBookingUrl: https://www.virgingalactic.com/login?screen_hint=signup
+officialContactUrl: https://www.virgingalactic.com/contact
+firstPublishedAt: '2026-09-16'
+
+facts:
+  - id: fct_vg-price-750k
+    factType: PUBLIC_PRICE
+    value:
+      {
+        kind: money,
+        amount: '750000',
+        currency: USD,
+        priceKind: HISTORICAL_PRICE,
+      }
+    label: 上一批席位票价，已超额认购售罄
+    validUntil: '2026-08-12'
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_vg-q2-2026]
+
+  - id: fct_vg-price-850k-reported
+    factType: PUBLIC_PRICE
+    value:
+      {
+        kind: money,
+        amount: '850000',
+        currency: USD,
+        priceKind: MEDIA_REPORTED,
+      }
+    label: 新一批票价（媒体报道，官网未显示价格）
+    validFrom: '2026-10-02'
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: REPORTED_UNCONFIRMED
+    confidenceLevel: LOW
+    sourceIds: [src_latte-vg-850k]
+    notes: 该报道称此前价格为 $650,000、涨幅 $200,000，与官方公布的 $750,000 不符，可信度存疑。
+
+  - id: fct_vg-application-fee
+    factType: DEPOSIT_AMOUNT
+    value:
+      { kind: money, amount: '1000', currency: USD, priceKind: MEDIA_REPORTED }
+    label: 申请费，可抵扣票款，退出时可退（媒体报道）
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: REPORTED_UNCONFIRMED
+    confidenceLevel: LOW
+    sourceIds: [src_latte-vg-850k]
+
+  - id: fct_vg-sales-sold-out
+    factType: TICKET_SALES_STATUS
+    value: { kind: availability, status: SOLD_OUT }
+    label: $750,000 一批已售罄，公司称今秋以更高价格开售新一批
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_vg-q2-2026]
+
+  - id: fct_vg-sales-open
+    factType: TICKET_SALES_STATUS
+    value: { kind: availability, status: OPEN_FOR_PURCHASE }
+    label: 官网横幅显示"限量预订开放"，需注册账户
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    supersedes: fct_vg-sales-sold-out
+    sourceIds: [src_vg-home]
+
+  - id: fct_vg-target-2027-02
+    factType: TARGET_FLIGHT_DATE
+    value: { kind: date, date: '2027-02' }
+    label: 首次商业飞行目标（第二艘太空船 2027 年 3 月）
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: MEDIUM
+    sourceIds: [src_vg-q2-2026]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: COMPANY_TARGET
+        basis: 未找到新的官方日程调整；第三季度财报尚未发布
+
+  - id: fct_vg-captive-carry
+    factType: OTHER
+    value: { kind: date, date: '2026-10' }
+    label: 太空船挂飞测试（不分离、非太空飞行）目标
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: MEDIUM
+    sourceIds: [src_vg-q2-2026]
+    notes: 截至 2026-10-19 未找到挂飞已完成或推迟的官方信息。
+
+  - id: fct_vg-altitude
+    factType: ALTITUDE
+    value: { kind: quantity, amount: 91, unit: KM, qualifier: APPROX }
+    label: 近 30 万英尺，未越过 100 km 卡门线
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_vg-brochure]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 宣传册原文仍为 nearly 300,000 feet
+
+  - id: fct_vg-weightless
+    factType: WEIGHTLESSNESS_DURATION
+    value: { kind: text, text: 数分钟 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_vg-brochure]
+
+  - id: fct_vg-eligibility
+    factType: ELIGIBILITY_REQUIREMENTS
+    value:
+      {
+        kind: text,
+        text: 需完成飞前详细医学问卷与现场体检；未公布年龄、身高与体重限制,
+      }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_vg-brochure]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 宣传册内容未变；FAQ 页面仅客户端渲染，无法读取
+
+  - id: fct_vg-training
+    factType: TRAINING_DURATION
+    value: { kind: undisclosed, note: 有飞行准备与安全培训，未公布时长 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_vg-brochure]
+
+events:
+  - id: evt_vg-unity-flights
+    eventType: CREWED_FLIGHT_COMPLETED
+    title: 上一代 VSS Unity 完成商业载人飞行（最近一次约 2024 年 6 月）
+    summary: 媒体称上一代系统共完成 12 次太空飞行、搭载 37 名私人乘客；日期与数量未在官方页面复核。
+    occurredAt: '2024-06'
+    recordedAt: '2026-10-19'
+    verificationStatus: REPORTED_UNCONFIRMED
+    sourceIds: [src_latte-vg-850k]
+  - id: evt_vg-delay-2027-02
+    eventType: TARGET_DATE_CHANGED
+    title: 首次商业飞行目标推迟至 2027 年 2 月
+    summary: 公司称需完成航电与系统安装。
+    announcedAt: '2026-08-12'
+    recordedAt: '2026-09-16'
+    previousValue: 2026 年第四季度
+    newValue: 2027 年 2 月
+    businessImpact: 新购票者最早的飞行时间随之后移；该日期仍为公司目标。
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_vg-q2-2026]
+  - id: evt_vg-sold-out-750k
+    eventType: OTHER
+    title: $750,000 一批席位超额认购、提前售罄
+    announcedAt: '2026-08-12'
+    recordedAt: '2026-09-16'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_vg-q2-2026]
+  - id: evt_vg-sales-open-2026-10
+    eventType: TICKET_SALES_OPENED
+    title: 开放新一批限量预订
+    summary: 官网横幅显示限量预订开放；价格仅见媒体报道。
+    announcedAt: '2026-10'
+    recordedAt: '2026-10-19'
+    businessImpact: 可通过官网注册进入购票流程；正式价格与合同条款需以官方报价为准。
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_vg-home, src_latte-vg-850k]
+  - id: evt_vg-afrl
+    eventType: OTHER
+    title: 与美国空军研究实验室签署空间天气科研合作协议
+    announcedAt: '2026-10-14'
+    recordedAt: '2026-10-19'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_vg-afrl]
+
+assessments:
+  - kind: RISK
+    text: Delta 是新一代太空船，挂飞、动力飞行等测试尚未完成
+    asOf: '2026-10-19'
+    sourceIds: [src_vg-q2-2026]
+  - kind: RISK
+    text: 远地点约 91 km，未越过 100 km 卡门线；美国法律对太空边界没有定义
+    asOf: '2026-09-16'
+    sourceIds: [src_faa-faq]
+  - kind: INFO_GAP
+    text: 新一批票价、押金与退款条款未在官方页面找到（FAQ 仅客户端渲染）
+    asOf: '2026-10-19'
+  - kind: ACTION_ADVICE
+    text: 以官方书面报价为准，不要依据媒体报道的价格付款
+    asOf: '2026-10-19'

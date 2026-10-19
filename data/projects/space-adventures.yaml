@@ -1,0 +1,140 @@
+id: prj_space-adventures
+slug: space-adventures
+name: 私人航天飞行经纪
+operatorName: Space Adventures
+countryOrRegion: 美国
+description: 历史上曾为 Dennis Tito、前泽友作等私人客户安排联盟号前往国际空间站，共 9 次飞行。官网自 2022 年起基本没有更新，未找到近期运营的证据。
+missionType: SPACE_STATION_MISSION
+participationPathways: [BROKER]
+experienceDescription: 历史任务：搭乘联盟号前往国际空间站，停留约 1–2 周。官网仍展示环月、太空行走、Dragon 任务等方案，但都没有实际飞行。
+targetCustomerSegments: [HIGH_NET_WORTH_INDIVIDUAL]
+developmentStage: UNKNOWN
+commercialAvailability: CONTACT_SALES
+classificationVerifiedAt: '2026-10-19'
+classificationSourceIds: [src_sa-home, src_sa-contact]
+officialWebsiteUrl: https://spaceadventures.com/
+officialContactUrl: https://spaceadventures.com/contact/
+firstPublishedAt: '2026-09-16'
+
+facts:
+  - id: fct_sa-price
+    factType: PUBLIC_PRICE
+    value: { kind: undisclosed, note: 官网称价格"取决于多种因素" }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_sa-guide]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 空间站与 Dragon 页面均无公开价格
+        sourceIds: [src_sa-iss, src_sa-dragon]
+
+  - id: fct_sa-sales-v1
+    factType: TICKET_SALES_STATUS
+    value: { kind: availability, status: WAITLIST_OR_INTEREST }
+    label: 迁移自旧版标签"等待名单"
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: LOW
+    sourceIds: [src_sa-iss2025]
+
+  - id: fct_sa-sales-v2
+    factType: TICKET_SALES_STATUS
+    value: { kind: availability, status: CONTACT_SALES }
+    label: 只有官网询价表单，未说明预订或候补机制
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    supersedes: fct_sa-sales-v1
+    sourceIds: [src_sa-contact]
+    notes: 旧版"等待名单"在官网找不到依据，故更正。
+
+  - id: fct_sa-target-iss2025
+    factType: TARGET_FLIGHT_DATE
+    value: { kind: date, date: '2025' }
+    label: '"Mission to ISS 2025"：目标 2025 年年中搭乘 Dragon 前往国际空间站'
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: COMPANY_TARGET
+    confidenceLevel: LOW
+    sourceIds: [src_sa-iss2025]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: OUTDATED
+        basis: 目标年份已过，没有任何相应的飞行记录；页面时间戳为 2024-01-15
+
+  - id: fct_sa-training
+    factType: TRAINING_DURATION
+    value:
+      {
+        kind: text,
+        text: 历史联盟号任务在加加林宇航员训练中心训练；Dragon 方案称在美国训练数周,
+      }
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_sa-mz, src_sa-iss2025]
+
+  - id: fct_sa-eligibility
+    factType: ELIGIBILITY_REQUIREMENTS
+    value:
+      {
+        kind: text,
+        text: Dragon 方案要求提供支付能力证明；未公布年龄或医学标准,
+      }
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    sourceIds: [src_sa-dragon]
+
+events:
+  - id: evt_sa-tito
+    eventType: CREWED_FLIGHT_COMPLETED
+    title: Dennis Tito 搭乘联盟号前往国际空间站
+    occurredAt: '2001-04'
+    recordedAt: '2026-10-19'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_sa-iss]
+  - id: evt_sa-ansari
+    eventType: CREWED_FLIGHT_COMPLETED
+    title: Anousheh Ansari 搭乘联盟号前往国际空间站
+    occurredAt: '2006-09-18'
+    recordedAt: '2026-10-19'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_sa-iss]
+  - id: evt_sa-laliberte
+    eventType: CREWED_FLIGHT_COMPLETED
+    title: Guy Laliberté 搭乘联盟号前往国际空间站
+    occurredAt: '2009-09-30'
+    recordedAt: '2026-10-19'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_sa-iss]
+  - id: evt_sa-maezawa
+    eventType: CREWED_FLIGHT_COMPLETED
+    title: 前泽友作与平野阳三搭乘联盟 MS-20 前往国际空间站
+    summary: 官方页面一处称在空间站停留 12 天，另一处称在太空 14 天。
+    occurredAt: '2021-12-08'
+    recordedAt: '2026-09-16'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_sa-mz, src_sa-iss]
+
+assessments:
+  - kind: JUDGMENT
+    text: 官网自 2022 年起基本未更新，未找到 2024 年后的运营信息，也未找到停业声明；公司当前是否仍在运营未知
+    asOf: '2026-10-19'
+    sourceIds: [src_sa-home]
+  - kind: RISK
+    text: 官网仍展示已过期的"Mission to ISS 2025"等方案，不能当作现役航班
+    asOf: '2026-10-19'
+    sourceIds: [src_sa-iss2025]
+  - kind: ACTION_ADVICE
+    text: 如需询价，先确认公司仍在运营，以及可用的承运商与具体任务
+    asOf: '2026-10-19'

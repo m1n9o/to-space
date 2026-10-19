@@ -1,0 +1,142 @@
+id: prj_sera-unity
+slug: sera-unity
+name: 社区选拔席位（UNITY 任务，New Shepard）
+operatorName: SERA（Space Exploration & Research Agency）
+countryOrRegion: 美国
+description: SERA 购买了 6 个 New Shepard 席位，通过社区投票选拔乘员，其中 5 席面向宇航员稀少国家的公民。New Shepard 停飞后，UNITY 任务处于暂停状态。
+missionType: SUBORBITAL
+participationPathways: [APPLICATION_SELECTION, SPONSORSHIP]
+experienceDescription: 飞行体验与 New Shepard 相同。选拔通过 Telegram 应用中的社区积分、投票与 KYC 进行。
+targetCustomerSegments: [INDIVIDUAL]
+developmentStage: PAUSED
+commercialAvailability: WAITLIST_OR_INTEREST
+classificationVerifiedAt: '2026-10-19'
+classificationSourceIds: [src_sera-home, src_sera-news-pause]
+officialWebsiteUrl: https://www.sera.space/
+officialBookingUrl: https://www.sera.space/registration
+dependsOnProjectIds: [prj_blue-origin-new-shepard]
+firstPublishedAt: '2026-09-16'
+
+facts:
+  - id: fct_sera-cost
+    factType: PUBLIC_PRICE
+    value: { kind: free, note: 席位由 SERA 购买，入选者经社区选拔，无需购票 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_sera-registration]
+    notes: 是否承担差旅与训练费用，未找到说明。
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 官网各页面均未提及参与者费用；新闻稿称 SERA 购买了 6 个席位
+        sourceIds: [src_sera-pr-seats]
+
+  - id: fct_sera-sales-v1
+    factType: TICKET_SALES_STATUS
+    value: { kind: availability, status: APPLICATION_OPEN }
+    label: 迁移自旧版标签"可预订/询价"
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: LOW
+    sourceIds: [src_sera-registration]
+
+  - id: fct_sera-sales-v2
+    factType: TICKET_SALES_STATUS
+    value: { kind: availability, status: WAITLIST_OR_INTEREST }
+    label: 可预登记接收更新；UNITY 飞行暂停，选拔时间待定
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    supersedes: fct_sera-sales-v1
+    sourceIds: [src_sera-home, src_sera-news-pause, src_sera-registration]
+    notes: 登记页仍称"即将到来的 New Shepard 发射"，与首页的暂停通知矛盾；以暂停通知为准。
+
+  - id: fct_sera-target
+    factType: TARGET_FLIGHT_DATE
+    value: { kind: undisclosed, note: UNITY 任务暂停，没有目标日期 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_sera-registration]
+    verifications:
+      - at: '2026-10-19'
+        by: Claude 辅助复核（待人工复审）
+        status: VERIFIED_OFFICIAL
+        basis: 官网称 UNITY 暂停，正寻找替代发射方案；路线图各阶段均为 TBD
+        sourceIds: [src_sera-news-pause]
+
+  - id: fct_sera-eligibility
+    factType: ELIGIBILITY_REQUIREMENTS
+    value:
+      kind: text
+      text: 飞行时年满 18 岁；须满足 Blue Origin 的身高、体重、体能与国籍要求；基本英语能力；第三方 KYC；Telegram 账号；5 席面向宇航员稀少国家公民，1 席不限
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: HIGH
+    sourceIds: [src_sera-astronauts, src_sera-pr-seats]
+    notes: 选拔流程声明未经 Blue Origin 认可或背书。
+
+  - id: fct_sera-training-v1
+    factType: TRAINING_DURATION
+    value: { kind: text, text: 需满足 Blue Origin 实际飞行要求 }
+    observedAt: '2026-09-16'
+    recordedAt: '2026-09-16'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: LOW
+    sourceIds: [src_sera-astronauts]
+
+  - id: fct_sera-training-v2
+    factType: TRAINING_DURATION
+    value: { kind: quantity, amount: 3, unit: DAY, qualifier: EXACT }
+    label: 获选乘员在 Blue Origin 西德州基地训练
+    observedAt: '2026-10-19'
+    recordedAt: '2026-10-19'
+    evidenceStatus: VERIFIED_OFFICIAL
+    confidenceLevel: MEDIUM
+    supersedes: fct_sera-training-v1
+    sourceIds: [src_sera-astronauts]
+
+events:
+  - id: evt_sera-hespanha
+    eventType: CREWED_FLIGHT_COMPLETED
+    title: Victor Hespanha 搭乘 NS-21 飞行
+    summary: SERA 前身项目从社区随机选出的首位宇航员（巴西）。
+    occurredAt: '2022-06-04'
+    recordedAt: '2026-10-19'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_sera-pr-blueorigin]
+  - id: evt_sera-seats
+    eventType: OTHER
+    title: 宣布购买 6 个 New Shepard 席位，面向宇航员稀少国家
+    announcedAt: '2024-07-01'
+    recordedAt: '2026-10-19'
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_sera-pr-seats]
+  - id: evt_sera-pause
+    eventType: PROGRAM_PAUSED
+    title: UNITY 任务因 New Shepard 停飞而暂停
+    summary: SERA 称将寻找替代的近期发射方案；通知未标注日期，发布于 2026-01-30 Blue Origin 公告之后。
+    announcedAt: '2026'
+    recordedAt: '2026-10-19'
+    businessImpact: 选拔与飞行时间均待定；目前只能预登记。
+    verificationStatus: VERIFIED_OFFICIAL
+    sourceIds: [src_sera-news-pause]
+
+assessments:
+  - kind: RISK
+    text: 完全依赖 New Shepard 复飞；Blue Origin 自 2026-01-30 起暂停飞行不少于两年
+    asOf: '2026-10-19'
+    sourceIds: [src_bo-pause]
+  - kind: JUDGMENT
+    text: 选拔制，不是确定的购买；登记不等于获得席位
+    asOf: '2026-09-16'
+  - kind: INFO_GAP
+    text: 未找到官方联系渠道、退款或费用覆盖范围说明；2025 年 12 月后未见官方动态
+    asOf: '2026-10-19'

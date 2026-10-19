@@ -347,16 +347,6 @@ select {
 
 /* ---------- List page ---------- */
 
-.intro {
-  margin-bottom: 1.25rem;
-}
-
-.intro p {
-  color: var(--text-2);
-  max-width: 60rem;
-  margin: 0;
-}
-
 .list-layout {
   display: grid;
   grid-template-columns: 240px 1fr;
@@ -784,4 +774,250 @@ select {
 .checked,
 .project-table td .check {
   white-space: nowrap;
+}
+
+/* ---------- Theme art & icons ---------- */
+
+:root {
+  --sky-top: #e9f0fb;
+  --limb: #7aa7e6;
+  --traj: #1f5fbf;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sky-top: #0f1a2c;
+    --limb: #4f86d9;
+    --traj: #7fb0ff;
+  }
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  vertical-align: -3px;
+}
+
+.icon-sm {
+  width: 14px;
+  height: 14px;
+  vertical-align: -2px;
+}
+
+.mission {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.mission .icon,
+.filter-group .icon {
+  color: var(--accent);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.brand {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  flex: none;
+}
+
+.site-header {
+  margin-bottom: 0;
+}
+
+main > :first-child:not(.hero) {
+  margin-top: 1.5rem;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  /* 突破 .container 的宽度限制，铺满整行 */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-bottom: 1.5rem;
+  background: linear-gradient(180deg, var(--sky-top) 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  padding-top: 1.75rem;
+  padding-bottom: 2.25rem;
+}
+
+.hero p {
+  color: var(--text-2);
+  max-width: 46rem;
+  margin: 0;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  margin: 1rem 0 0;
+}
+
+.hero-stats div {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.hero-stats dt {
+  font-size: 0.8rem;
+  color: var(--text-2);
+}
+
+.hero-stats dd {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 高度标尺 */
+.altitude {
+  margin: 1rem 0 0.5rem;
+  padding: 0 0.5rem;
+}
+
+.altitude-track {
+  position: relative;
+  height: 6px;
+  margin: 2.6rem 0 3rem;
+  border-radius: 3px;
+  background: var(--border);
+}
+
+.altitude-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 3px;
+  background: var(--accent);
+}
+
+.altitude-ref,
+.altitude-karman,
+.altitude-current {
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%);
+}
+
+.altitude-ref {
+  width: 1px;
+  height: 20px;
+  margin-top: -10px;
+  background: var(--muted);
+}
+
+.altitude-ref-text {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: var(--muted);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.altitude-karman {
+  height: 56px;
+  margin-top: -44px;
+  border-left: 2px dashed var(--bad);
+}
+
+.altitude-karman span {
+  position: absolute;
+  top: -2px;
+  left: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--bad);
+  white-space: nowrap;
+}
+
+.altitude-current {
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--surface);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.altitude-current span {
+  position: absolute;
+  bottom: 22px;
+  /* 标签整体位于圆点左侧，避免与紧邻的卡门线重叠 */
+  right: 50%;
+  margin-right: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 800px) {
+  /* 窄屏只保留刻度线，避免参照点标签互相重叠 */
+  .altitude-ref-text {
+    display: none;
+  }
+}
+
+.project-table .mission {
+  white-space: nowrap;
+}
+
+@media (min-width: 801px) {
+  .project-table td[data-label='阶段'],
+  .project-table td[data-label='商业参与'] {
+    min-width: 5.5rem;
+  }
+
+  .project-table tbody th {
+    min-width: 11rem;
+  }
+}
+
+@media (max-width: 800px) {
+  /* 窄屏下背景只保留地球边缘，轨迹与标注会压到文字上 */
+  .hero-art-detail {
+    display: none;
+  }
+
+  .hero-art {
+    opacity: 0.6;
+  }
 }

@@ -1,4 +1,5 @@
 import { EVIDENCE_STATUS_LABELS, type EvidenceStatus } from '../domain/enums.ts'
+import { StatusIcon } from './icons.tsx'
 
 const TONE: Record<EvidenceStatus, string> = {
   VERIFIED_OFFICIAL: 'good',
@@ -13,6 +14,7 @@ const TONE: Record<EvidenceStatus, string> = {
 export function StatusBadge({ status }: { status: EvidenceStatus }) {
   return (
     <span className={`badge badge-${TONE[status]}`} data-status={status}>
+      <StatusIcon status={status} />
       {EVIDENCE_STATUS_LABELS[status]}
     </span>
   )

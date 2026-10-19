@@ -2,6 +2,8 @@ import { useMemo } from 'react'
 import { Link, useSearchParams } from 'react-router'
 import { useAtlas } from '../app/atlasContext.ts'
 import { CheckedAt } from '../components/CheckedAt.tsx'
+import { Hero } from '../components/Hero.tsx'
+import { MissionIcon } from '../components/icons.tsx'
 import { StatusBadge, Tag } from '../components/StatusBadge.tsx'
 import {
   COMMERCIAL_AVAILABILITIES,
@@ -10,6 +12,7 @@ import {
   DEVELOPMENT_STAGE_LABELS,
   MISSION_TYPES,
   MISSION_TYPE_LABELS,
+  MISSION_TYPE_SHORT_LABELS,
   type Currency,
 } from '../domain/enums.ts'
 import type { Project } from '../domain/model.ts'
@@ -29,6 +32,7 @@ function FilterGroup<T extends string>({
   labels,
   selected,
   counts,
+  icon,
   onChange,
 }: {
   legend: string
@@ -36,6 +40,7 @@ function FilterGroup<T extends string>({
   labels: Record<T, string>
   selected: readonly T[]
   counts: Map<T, number>
+  icon?: (value: T) => React.ReactNode
   onChange: (next: T[]) => void
 }) {
   const visible = values.filter((v) => counts.has(v) || selected.includes(v))
@@ -55,6 +60,7 @@ function FilterGroup<T extends string>({
               )
             }
           />
+          {icon?.(value)}
           {labels[value]}{' '}
           <span className="count">{counts.get(value) ?? 0}</span>
         </label>
@@ -128,14 +134,7 @@ export function ProjectListPage() {
 
   return (
     <>
-      <section className="intro">
-        <h1>普通人如何上太空：项目档案与进展追踪</h1>
-        <p>
-          收录 <strong>{active.length}</strong>{' '}
-          个面向非职业航天员的载人航天参与路径。
-          每条价格、时间表和售票状态都标注来源与核实日期；公司目标、媒体报道与官方确认分开显示。
-        </p>
-      </section>
+      <Hero />
 
       <div className="list-layout">
         <aside className="filters" aria-label="筛选">
@@ -154,6 +153,9 @@ export function ProjectListPage() {
             labels={MISSION_TYPE_LABELS}
             selected={query.missionTypes ?? []}
             counts={countBy(active, (p) => p.missionType)}
+            icon={(type) => (
+              <MissionIcon type={type} className="icon icon-sm" />
+            )}
             onChange={(missionTypes) => update({ missionTypes })}
           />
           <FilterGroup
@@ -237,7 +239,13 @@ export function ProjectListPage() {
                         </span>
                       </th>
                       <td data-label="类型">
-                        {MISSION_TYPE_LABELS[p.missionType]}
+                        <span
+                          className="mission"
+                          title={MISSION_TYPE_LABELS[p.missionType]}
+                        >
+                          <MissionIcon type={p.missionType} />
+                          {MISSION_TYPE_SHORT_LABELS[p.missionType]}
+                        </span>
                       </td>
                       <td data-label="阶段">
                         {DEVELOPMENT_STAGE_LABELS[p.developmentStage]}

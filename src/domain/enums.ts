@@ -22,6 +22,15 @@ export const MISSION_TYPE_LABELS: Record<MissionType, string> = {
 // 研发/运营阶段：描述"能力已到哪一步"，不是严格线性流程。
 // PAUSED / CANCELLED 是运营状态覆盖：一个已完成载人飞行的项目仍可能处于 PAUSED。
 // 是否"演示过载人飞行"由事件（CREWED_FLIGHT_COMPLETED）回答，不由阶段推断。
+/** 表格等窄空间使用的简称；完整含义见 MISSION_TYPE_LABELS */
+export const MISSION_TYPE_SHORT_LABELS: Record<MissionType, string> = {
+  SUBORBITAL: '亚轨道',
+  ORBITAL: '轨道',
+  SPACE_STATION_MISSION: '空间站',
+  NEAR_SPACE: '近太空（非太空）',
+  OTHER: '其他',
+}
+
 export const DEVELOPMENT_STAGES = [
   'CONCEPT',
   'DEVELOPMENT',

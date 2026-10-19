@@ -46,9 +46,12 @@ beforeEach(() => localStorage.clear())
 afterEach(cleanup)
 
 describe('项目列表页', () => {
-  it('显示项目总数，缺失价格显示为未知而不是 0 或免费', () => {
+  it('显示数据集统计，缺失价格显示为未知而不是 0 或免费', () => {
     renderApp(atlas, '/')
-    expect(screen.getByText(/收录/)).toHaveTextContent('收录 2 个')
+    const stat = (label: string) => screen.getByText(label).nextElementSibling
+    expect(stat('收录项目')).toHaveTextContent('2')
+    expect(stat('结构化事实')).toHaveTextContent('2')
+    expect(stat('最近复核')).toHaveTextContent('2026-09-16')
     const betaRow = screen
       .getByRole('link', { name: 'Beta Orbit' })
       .closest('tr')!
@@ -97,6 +100,16 @@ describe('项目详情页', () => {
     expect(
       screen.getByRole('heading', { name: '未找到该页面' }),
     ).toBeInTheDocument()
+  })
+})
+
+describe('图标', () => {
+  it('图标为装饰性元素，状态含义由文字表达', () => {
+    const { container } = renderApp(atlas, '/')
+    const icons = container.querySelectorAll('svg.icon')
+    expect(icons.length).toBeGreaterThan(0)
+    icons.forEach((icon) => expect(icon).toHaveAttribute('aria-hidden', 'true'))
+    expect(screen.getAllByText('官方确认').length).toBeGreaterThan(0)
   })
 })
 

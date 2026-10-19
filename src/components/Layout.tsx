@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from 'react-router'
 import { useCompareSelection } from '../features/compare/useCompareSelection.ts'
+import { Logo } from './icons.tsx'
 
 export function Layout() {
   const { ids } = useCompareSelection()
@@ -11,8 +12,11 @@ export function Layout() {
       <header className="site-header">
         <div className="container header-inner">
           <NavLink to="/" className="brand">
-            Spaceflight Atlas
-            <span className="brand-sub">普通人上太空 · 结构化决策数据库</span>
+            <Logo />
+            <span className="brand-text">
+              Spaceflight Atlas
+              <span className="brand-sub">普通人上太空 · 结构化决策数据库</span>
+            </span>
           </NavLink>
           <nav aria-label="主导航">
             <NavLink to="/" end>

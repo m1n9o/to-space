@@ -1,7 +1,9 @@
 import { Link, useParams } from 'react-router'
 import { useAtlas, useProject } from '../app/atlasContext.ts'
 import { CheckedAt } from '../components/CheckedAt.tsx'
+import { AltitudeRuler } from '../components/AltitudeRuler.tsx'
 import { FactBlock } from '../components/FactBlock.tsx'
+import { MissionIcon } from '../components/icons.tsx'
 import { SourceLink, SourceRefs } from '../components/SourceLink.tsx'
 import { StatusBadge, Tag } from '../components/StatusBadge.tsx'
 import { formatPartialDate } from '../domain/dates.ts'
@@ -238,7 +240,11 @@ export function ProjectDetailPage() {
         <div>
           <h1>{project.name}</h1>
           <p className="detail-operator">
-            {project.operatorName} · {project.countryOrRegion}
+            {project.operatorName} · {project.countryOrRegion} ·{' '}
+            <span className="mission">
+              <MissionIcon type={project.missionType} />
+              {MISSION_TYPE_LABELS[project.missionType]}
+            </span>
           </p>
         </div>
         <div className="detail-actions">
@@ -329,6 +335,7 @@ export function ProjectDetailPage() {
         {project.experienceDescription && (
           <p>{project.experienceDescription}</p>
         )}
+        <AltitudeRuler project={project} />
         <div className="fact-grid">
           <FactBlock project={project} type="ALTITUDE" />
           <FactBlock project={project} type="FLIGHT_DURATION" />
